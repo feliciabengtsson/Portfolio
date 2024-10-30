@@ -1,0 +1,121 @@
+/*General style - start*/
+:root {
+    --main-background-color: #F6EDD9;
+    --secondary-backgroud-color: #758E4F;
+    --third-color: #white;
+    --main-font-color: #162900;
+    --secondary-font-color: black;
+    --main-accent-color: #00C7F6;
+    --secondary-accent-color: #99DDC8;
+}
+
+* {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: radial-gradient(var(--secondary-backgroud-color), var(--main-background-color)); height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    position: relative;
+}
+
+p {
+    color: var(--main-font-color);
+}
+
+a {
+    color: var(--main-font-color);
+    font-weight: bold;
+}
+
+a:hover {
+
+}
+
+section {
+    height: 100%;
+}
+/*General style - end*/
+
+/*Header style - start*/
+header {
+    margin: -8px -8px;
+    height: 90px;
+}
+
+#header {
+    display: flex;
+    justify-content: space-between;
+}
+
+#nav-links-wrapper {
+    background-color: var(--secondary-backgroud-color);
+    border-radius: 20px;
+    width: fit-content;
+    margin: 20px 10px 5px 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar {
+    padding: 5px 20px;
+}
+
+header li {
+    list-style: none;
+    display: inline-block;
+    padding: 0 15px;
+}
+/*Header style - end*/
+
+/*main style - start*/
+h1 {
+    color: var(--main-font-color);
+    font-size: 5em;
+    margin: 0;
+    width: 50px;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 100vh;
+}
+
+#presentation {
+    position: absolute;
+    top: 320px; left: 210px;
+}
+
+#projects {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+.project-part {
+    background-color: var(--secondary-backgroud-color);
+    border: solid var(--main-font-color) 5px;
+    border-radius: 5px;
+    height: 300px;
+    width: auto;
+    gap: 5px;
+    box-shadow: 0 8px 8px 0;
+}
+
+.project-image {
+    height: 300px;
+    width: auto;
+}
+/*main style - end*/
+
+/*footer style - start*/
+footer {
+    position: absolute;
+    bottom: 0;
+}
+/*footer style - end*/
