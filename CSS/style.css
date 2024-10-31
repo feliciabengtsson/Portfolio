@@ -2,7 +2,7 @@
 :root {
     --main-background-color: #F6EDD9;
     --secondary-backgroud-color: #758E4F;
-    --third-color: #white;
+    --third-color: white;
     --main-font-color: #162900;
     --secondary-font-color: black;
     --main-accent-color: #00C7F6;
@@ -25,12 +25,12 @@ p {
 }
 
 a {
-    color: var(--main-font-color);
+    color: var(--secondary-font-color);
     font-weight: bold;
 }
 
 a:hover {
-
+    color: var(--third-color);
 }
 
 section {
@@ -49,6 +49,17 @@ header {
     justify-content: space-between;
 }
 
+.social-media {
+    margin: 15px auto auto;
+    position: relative;
+    left: -600px;
+}
+
+.social-media > a {
+    font-size: 1.5em;
+    color: var(--main-font-color);
+}
+
 #nav-links-wrapper {
     background-color: var(--secondary-backgroud-color);
     border-radius: 20px;
@@ -57,6 +68,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    box-shadow: 0px 3px 15px 3px rgba(0,0,0,0.75);
 }
 
 .navbar {
@@ -72,10 +84,12 @@ header li {
 
 /*main style - start*/
 h1 {
-    color: var(--main-font-color);
-    font-size: 5em;
+    color: var(--third-color);
+    font-family: SpaceGrotesk, Arial, Helvetica, sans-serif;
+    font-size: 6.5em;
+    font-weight: 400;
+    text-shadow: var(--secondary-font-color) 6px 6px 8px;
     margin: 0;
-    width: 50px;
 }
 
 section {
@@ -86,30 +100,40 @@ section {
     height: 100vh;
 }
 
-#presentation {
-    position: absolute;
-    top: 320px; left: 210px;
+.presentation-text {
+    font-family: PixelifySans, Arial, Helvetica, sans-serif;
+    font-size: 2.5em;
 }
 
 #projects {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
+    gap: 30px;
 }
 
 .project-part {
     background-color: var(--secondary-backgroud-color);
-    border: solid var(--main-font-color) 5px;
     border-radius: 5px;
-    height: 300px;
-    width: auto;
-    gap: 5px;
-    box-shadow: 0 8px 8px 0;
+    height: auto;
+    width: 340px;
+    box-shadow: -1px 10px 15px 7px rgba(0,0,0,0.75);
 }
 
 .project-image {
     height: 300px;
     width: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5%;
+    box-shadow: 1px 2px 23px 6px rgba(0,0,0,0.5) inset;
+}
+
+.portfolio-title, .portfolio-under-title, .portfolio-description {
+    padding: 0 7px;
+    color: var(--main-font-color);
+    font-family: SpaceGrotesk, Arial, Helvetica, sans-serif;
 }
 /*main style - end*/
 
@@ -119,3 +143,13 @@ footer {
     bottom: 0;
 }
 /*footer style - end*/
+
+@font-face {
+    font-family: "PixelifySans";
+    src: url(PixelifySans-VariableFont_wght.ttf);
+}
+
+@font-face {
+    font-family: SpaceGrotesk;
+    src: url(SpaceGrotesk-VariableFont_wght.ttf);
+}
