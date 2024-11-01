@@ -1,7 +1,7 @@
 /*General style - start*/
 :root {
     --main-background-color: #F6EDD9;
-    --secondary-backgroud-color: #758E4F;
+    --secondary-background-color: #758E4F;
     --third-color: white;
     --main-font-color: #162900;
     --secondary-font-color: black;
@@ -15,23 +15,26 @@
 }
 
 body {
-    background: radial-gradient(var(--secondary-backgroud-color), var(--main-background-color)); height: 100vh;
+    background: radial-gradient(var(--secondary-background-color), var(--main-background-color)); height: 100vh;
     font-family: Arial, Helvetica, sans-serif;
     position: relative;
 }
 
 p {
     color: var(--main-font-color);
+    font-family: Chilanka, Arial, Helvetica, sans-serif;
 }
 
 a {
     color: var(--secondary-font-color);
     font-weight: bold;
+    font-family: Chilanka, Arial, Helvetica, sans-serif;
 }
 
 a:hover {
     color: var(--third-color);
 }
+
 
 section {
     height: 100%;
@@ -49,19 +52,8 @@ header {
     justify-content: space-between;
 }
 
-.social-media {
-    margin: 15px auto auto;
-    position: relative;
-    left: -600px;
-}
-
-.social-media > a {
-    font-size: 1.5em;
-    color: var(--main-font-color);
-}
-
 #nav-links-wrapper {
-    background-color: var(--secondary-backgroud-color);
+    background-color: var(--secondary-background-color);
     border-radius: 20px;
     width: fit-content;
     margin: 20px 10px 5px 0px;
@@ -87,7 +79,7 @@ h1 {
     color: var(--third-color);
     font-family: SpaceGrotesk, Arial, Helvetica, sans-serif;
     font-size: 6.5em;
-    font-weight: 400;
+    font-weight: 500;
     text-shadow: var(--secondary-font-color) 6px 6px 8px;
     margin: 0;
 }
@@ -101,7 +93,7 @@ section {
 }
 
 .presentation-text {
-    font-family: PixelifySans, Arial, Helvetica, sans-serif;
+    font-family: Chilanka, Arial, Helvetica, sans-serif;
     font-size: 2.5em;
 }
 
@@ -113,7 +105,7 @@ section {
 }
 
 .project-part {
-    background-color: var(--secondary-backgroud-color);
+    background-color: var(--secondary-background-color);
     border-radius: 5px;
     height: auto;
     width: 340px;
@@ -133,23 +125,106 @@ section {
 .portfolio-title, .portfolio-under-title, .portfolio-description {
     padding: 0 7px;
     color: var(--main-font-color);
-    font-family: SpaceGrotesk, Arial, Helvetica, sans-serif;
+    font-family: Chilanka, Arial, Helvetica, sans-serif;
 }
+
+#contact-wrapper {
+    background-color: var(--main-background-color);
+    box-shadow: 0px 6px 14px 1px rgba(0,0,0,0.75);
+    border-radius: 40px;
+    height: 500px;
+    width: 500px;
+}
+
+#contact-information {
+    margin: 10px;
+    text-align: center;
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h2 {
+    font-family: Chilanka, Arial, Helvetica, sans-serif;
+}
+
+.social-media {
+    display: inline-flex;
+}
+
+.social-media a {
+    color: var(--main-font-color);
+}
+
+.social-media a:hover {
+    color: var(--secondary-background-color);
+}
+
+.social-media a {
+    padding: 5px;
+    font-size: 2em;
+}
+
+#contact-form {
+    height: 280px;
+}
+
+form {
+    height: 100px;
+}
+
+input, textarea {
+    padding: 10px;
+    margin: 3px;
+    border-radius: 5px;
+    border: 2px solid var(--secondary-accent-color);
+    font-family: Chilanka, Arial, Helvetica, sans-serif;
+}
+
+textarea {
+    height: 180px;
+    width: 300px;
+}
+
+button {
+    background-color: var(--secondary-accent-color);
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    border: 2px solid var(--secondary-accent-color);
+    font-family: Chilanka, Arial, Helvetica, sans-serif;
+    position: relative
+}
+
+button:hover {
+    background-color: var(--main-accent-color);
+}
+
 /*main style - end*/
 
 /*footer style - start*/
 footer {
-    position: absolute;
+    position: relative;
     bottom: 0;
 }
 /*footer style - end*/
 
 @font-face {
-    font-family: "PixelifySans";
+    font-family: PixelifySans;
     src: url(PixelifySans-VariableFont_wght.ttf);
 }
 
 @font-face {
     font-family: SpaceGrotesk;
     src: url(SpaceGrotesk-VariableFont_wght.ttf);
+}
+
+@font-face {
+    font-family: CherryBombOne;
+    src: url(CherryBombOne-Regular.ttf);
+}
+
+@font-face {
+    font-family: Chilanka;
+    src: url(Chilanka-Regular.ttf);
 }

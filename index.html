@@ -16,16 +16,11 @@
       <div id="header">
         <div class="hamburger-menu"></div>
         <div class="logo-wrapper"></div>
-        <div class="social-media">
-          <a aria-label="Linkedin"><i class="bi bi-linkedin"></i></a>
-          <a aria-label="Github"><i class="bi bi-github"></i></a>
-          <a aria-label="Instagram"><i class="bi bi-instagram"></i></a>
-        </div>
         <div class="navbar-wrapper">
           <nav>
             <div id="nav-links-wrapper">
               <ul class="navbar">
-                <li><a href="#">Start</a></li>
+                <li><a href="index.html">Start</a></li>
                 <li><a href="#">Projekt</a></li>
                 <li><a href="#">CV</a></li>
                 <li><a href="#">Kontakt</a></li>
@@ -54,8 +49,8 @@
                 </a>
               </div>
               <div class="project-description">
-                <h2 class="portfolio-title">Rubrik</h2>
-                <h3 class="portfolio-under-title">Underrubrik</h3>
+                <h3 class="portfolio-title">Rubrik</h3>
+                <h4 class="portfolio-under-title">Underrubrik</h4>
                 <p class="portfolio-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut exercitationem aspernatur facere ex. Facere sint dolor ipsam. 
                   Obcaecati, ipsum ducimus doloribus quam accusantium laboriosam placeat sit facilis. Ullam, minima omnis.</p>
               </div>
@@ -67,8 +62,8 @@
                 </a>
               </div>
               <div class="project-description">
-                <h2 class="portfolio-title">Rubrik</h2>
-                <h3 class="portfolio-under-title">Underrubrik</h3>
+                <h3 class="portfolio-title">Rubrik</h3>
+                <h4 class="portfolio-under-title">Underrubrik</h4>
                 <p class="portfolio-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut exercitationem aspernatur facere ex. Facere sint dolor ipsam. 
                   Obcaecati, ipsum ducimus doloribus quam accusantium laboriosam placeat sit facilis. Ullam, minima omnis.</p>
               </div>
@@ -80,8 +75,8 @@
                 </a>
               </div>
               <div class="project-description">
-                <h2 class="portfolio-title">Rubrik</h2>
-                <h3 class="portfolio-under-title">Underrubrik</h3>
+                <h3 class="portfolio-title">Rubrik</h3>
+                <h4 class="portfolio-under-title">Underrubrik</h4>
                 <p class="portfolio-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut exercitationem aspernatur facere ex. Facere sint dolor ipsam. 
                   Obcaecati, ipsum ducimus doloribus quam accusantium laboriosam placeat sit facilis. Ullam, minima omnis.</p>
               </div>
@@ -93,8 +88,8 @@
                 </a>
               </div>
               <div class="project-description">
-                <h2 class="portfolio-title">Rubrik</h2>
-                <h3 class="portfolio-title">Underrubrik</h3>
+                <h3 class="portfolio-title">Rubrik</h3>
+                <h4 class="portfolio-title">Underrubrik</h4>
                 <p class="portfolio-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut exercitationem aspernatur facere ex. Facere sint dolor ipsam. 
                   Obcaecati, ipsum ducimus doloribus quam accusantium laboriosam placeat sit facilis. Ullam, minima omnis.</p>
               </div>
@@ -103,16 +98,28 @@
         </section>
         <div class="arrow-down-icon"></div>
         <section aria-labelledby="contact-form" class="content-part">
-          <div id="contact">
-            <form action="https://avancera.app/chat/" method="POST" subject="HTML">
-              <input name="name" value"">
-              <input checked name="anonymous" type="checkbox"> Anonym
-              <input name="subject" type="radio" value="HTML"> HTML
-              <input name="subject" type="radio" value="CSS"> CSS
-              <input name="subject" type="radio" value="JavaScript"> JavaScript
-              <input type="submit" value="Send">
-              <input name="text" value="">
-          </form>
+          <div id="contact-wrapper">
+            <div id="contact-information">
+              <h2>Kontakta mig!</h2>
+              <p>Tveka inte att kontakta mig direkt via formuläret nedan, eller connecta med mig på någon av mina sociala plattformar.</p>
+              <div class="social-media">
+                <a aria-label="Linkedin" href="https://www.linkedin.com/in/felicia-bengtsson/"><i class="bi bi-linkedin"></i></a>
+                <a aria-label="Github" href="https://github.com/feliciabengtsson"><i class="bi bi-github"></i></a>
+                <a aria-label="Instagram" href="https://www.instagram.com/tarawenscorner/"><i class="bi bi-instagram"></i></a>
+              </div>
+            </div>
+            <div id="contact-form">
+              <form>
+                <label for="name">
+                  <input type="text" name="name" id="name" placeholder="Namn" required>
+                </label>
+                <label for="email">
+                  <input type="email" name="email" id="email" placeholder="Email" required>
+                </label>
+                <textarea name="message" id="message" placeholder="Skriv ditt meddelande här..." required></textarea>
+                <button id="send-button" type="submit">Skicka</button>
+              </form>
+            </div>
           </div>
         </section>
       </div>
