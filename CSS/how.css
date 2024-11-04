@@ -1,0 +1,179 @@
+/*General style - start*/
+:root {
+  --main-background-color: #ffffff;
+  --secondary-background-color: #4181a7;
+  --third-color: rgb(181, 232, 255);
+  --main-font-color: #123758;
+  --secondary-font-color: black;
+  --main-accent-color: #fd9308;
+  --secondary-accent-color: #ddc099;
+}
+
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: radial-gradient(var(--third-color), var(--main-background-color)); height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+  position: relative;
+}
+
+p {
+  color: var(--secondary-font-color);
+  font-family: SpaceGrotesk, Arial, Helvetica, sans-serif;
+}
+
+a {
+  color: var(--main-font-color);
+  font-weight: bold;
+  font-family: SpaceGrotesk, Arial, Helvetica, sans-serif;
+}
+
+a:hover {
+  color: var(--secondary-font-color);
+}
+
+
+section {
+  height: 100%;
+}
+/*General style - end*/
+
+/*Header style - start*/
+header {
+  margin: -8px -8px;
+  height: 90px;
+}
+
+#header {
+  display: flex;
+  justify-content: space-between;
+}
+
+#nav-links-wrapper {
+  background-color: var(--secondary-accent-color);
+  border-radius: 20px;
+  width: fit-content;
+  margin: 20px 10px 5px 0px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0px 3px 15px 3px rgba(0,0,0,0.75);
+}
+
+.navbar {
+  padding: 5px 20px;
+}
+
+header li {
+  list-style: none;
+  display: inline-block;
+  padding: 0 15px;
+}
+/*Header style - end*/
+
+/*main style - start*/
+h1 {
+  color: var(--main-accent-color);
+  font-family: SpaceGrotesk, Arial, Helvetica, sans-serif;
+  font-size: 5.5em;
+  font-weight: 500;
+  text-shadow: var(--secondary-font-color) 6px 6px 8px;
+  margin: 0;
+}
+
+section:not(#introduction) {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+#presentation {
+  text-align: center;
+}
+
+.presentation-text {
+  font-family: SpaceGrotesk, Arial, Helvetica, sans-serif;
+  font-size: 1.7em;
+  margin-bottom: 60px;
+}
+
+#projects {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 30px;
+}
+
+.project-part {
+  background-color: var(--secondary-background-color);
+  border-radius: 5px;
+  height: auto;
+  width: fit-content;
+  max-height: 800px;
+  max-width: 550px;
+  box-shadow: -1px 10px 15px 7px rgba(0,0,0,0.75);
+  margin: 7px;
+  padding: 15px;
+}
+
+.project-image {
+  height: auto;
+  width: auto;
+  max-height: 300px;
+  max-width: 510px;
+  border-radius: 5px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+}
+
+.project-description {
+  width: 500px;
+  height: auto;
+}
+
+.portfolio-title, .portfolio-under-title, .portfolio-description {
+  padding: 0 7px;
+  color: var(--secondary-font-color);
+  font-family: SpaceGrotesk, Arial, Helvetica, sans-serif;
+  margin: 15px 7px;
+}
+
+.portfolio-title {
+  display: inline;
+  font-size: 1.7em;
+}
+
+/*main style - end*/
+
+/*footer style - start*/
+footer {
+  position: relative;
+  bottom: 0;
+}
+/*footer style - end*/
+
+@font-face {
+  font-family: PixelifySans;
+  src: url(PixelifySans-VariableFont_wght.ttf);
+}
+
+@font-face {
+  font-family: SpaceGrotesk;
+  src: url(SpaceGrotesk-VariableFont_wght.ttf);
+}
+
+@font-face {
+  font-family: CherryBombOne;
+  src: url(CherryBombOne-Regular.ttf);
+}
+
+@font-face {
+  font-family: Chilanka;
+  src: url(Chilanka-Regular.ttf);
+}

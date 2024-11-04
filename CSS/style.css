@@ -22,13 +22,13 @@ body {
 
 p {
     color: var(--main-font-color);
-    font-family: Chilanka, Arial, Helvetica, sans-serif;
+    font-family: SpaceGrotesk, Arial, Helvetica, sans-serif;
 }
 
 a {
     color: var(--secondary-font-color);
     font-weight: bold;
-    font-family: Chilanka, Arial, Helvetica, sans-serif;
+    font-family: SpaceGrotesk, Arial, Helvetica, sans-serif;
 }
 
 a:hover {
@@ -84,6 +84,10 @@ h1 {
     margin: 0;
 }
 
+h1 > span {
+    color: var(--secondary-font-color);
+}
+
 section {
     display: flex;
     flex-direction: column;
@@ -93,7 +97,7 @@ section {
 }
 
 .presentation-text {
-    font-family: Chilanka, Arial, Helvetica, sans-serif;
+    font-family: SpaceGrotesk, Arial, Helvetica, sans-serif;
     font-size: 2.5em;
 }
 
@@ -108,24 +112,38 @@ section {
     background-color: var(--secondary-background-color);
     border-radius: 5px;
     height: auto;
-    width: 340px;
+    width: fit-content;
     box-shadow: -1px 10px 15px 7px rgba(0,0,0,0.75);
 }
 
 .project-image {
-    height: 300px;
-    width: auto;
+    height: auto;
+    width: 360px;
     display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 5%;
-    box-shadow: 1px 2px 23px 6px rgba(0,0,0,0.5) inset;
+    border-radius: 5px;
+    margin: 17px;
+}
+
+.project-description {
+    width: 380px;
 }
 
 .portfolio-title, .portfolio-under-title, .portfolio-description {
     padding: 0 7px;
     color: var(--main-font-color);
-    font-family: Chilanka, Arial, Helvetica, sans-serif;
+    font-family: SpaceGrotesk, Arial, Helvetica, sans-serif;
+    margin: 15px 7px;
+}
+
+.portfolio-title {
+    display: inline;
+    font-size: 1.7em;
+}
+
+.filter-projects {
+    color: var(--main-font-color);
+    font-family: SpaceGrotesk, Arial, Helvetica, sans-serif;
+    padding: 0 7px;
 }
 
 #contact-wrapper {
@@ -165,12 +183,11 @@ h2 {
     font-size: 2em;
 }
 
-#contact-form {
-    height: 280px;
-}
-
 form {
-    height: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-end;
 }
 
 input, textarea {
@@ -183,17 +200,17 @@ input, textarea {
 
 textarea {
     height: 180px;
-    width: 300px;
+    width: 335px;
 }
 
 button {
     background-color: var(--secondary-accent-color);
     padding: 10px;
-    margin: 10px;
+    margin: 3px;
     border-radius: 5px;
     border: 2px solid var(--secondary-accent-color);
     font-family: Chilanka, Arial, Helvetica, sans-serif;
-    position: relative
+    max-height: fit-content;
 }
 
 button:hover {
