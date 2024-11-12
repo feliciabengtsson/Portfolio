@@ -1,35 +1,36 @@
 /*General style - start*/
 :root {
-    --main-background-color: #F6EDD9;
-    --secondary-background-color: #758E4F;
+    --main-background-color: #fdf7e9;
+    --secondary-background-color: #92aa6f;
     --third-color: white;
-    --main-font-color: #162900;
+    --main-font-color: #0e1a02;
     --secondary-font-color: black;
-    --main-accent-color: #00C7F6;
-    --secondary-accent-color: #99DDC8;
+    --main-accent-color: #a73333;
+    --secondary-accent-color: #c56458;
 }
 
 * {
     box-sizing: border-box;
     scroll-behavior: smooth;
+    font-family: Inter, Arial, Helvetica, sans-serif;
 }
 
 body {
-    background: radial-gradient(var(--third-color), var(--main-background-color)); height: 100vh;
-    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    height: 100%;
+    background-color: var(--secondary-background-color);
 }
 
 p {
     color: var(--main-font-color);
-    font-family: SpaceGrotesk, Arial, Helvetica, sans-serif;
     font-size: 1em;
 }
 
 a {
     color: var(--secondary-font-color);
-    font-weight: bold;
-    font-size: .7em;
-    font-family: SpaceGrotesk, Arial, Helvetica, sans-serif;
+    font-weight: 450;
+    text-decoration: none;
+    font-size: .8em;
 }
 
 a:hover {
@@ -45,6 +46,11 @@ section {
 /*General style - end*/
 
 /*Header style - start*/
+header {
+    background-color: var(--main-background-color);
+    background-size: cover;
+}
+
 #header {
     display: flex;
     justify-content: space-around;
@@ -53,13 +59,10 @@ section {
 }
 
 #nav-links-wrapper {
-    background: linear-gradient(var(--secondary-background-color), rgb(70, 107, 52));
-    border-radius: 20px;
     width: fit-content;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0px 0px 15px 1px rgba(0,0,0,0.75);
 }
 
 .navbar {
@@ -74,44 +77,97 @@ header li {
 /*Header style - end*/
 
 /*main style - start*/
-h1 {
-    color: var(--main-font-color);
-    font-family: SpaceGrotesk, Arial, Helvetica, sans-serif;
-    font-size: 3.6em;
-    font-weight: 500;
-    margin: 0;
-}
-
-h1 > span {
-    color: var(--main-accent-color);
-}
-
 #introduction {
-    height: 75vh;
+    height: 77vh;
+    background-color: var(--main-background-color);
 }
 
 #presentation {
-    margin: 70px 5px;
+    margin: 0px 15px;
 }
 
+#profile-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px;
+}
+
+#profile-picture {
+    border-radius: 50%;
+    width: 130px;
+    height: 130px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
 .presentation-text {
-    font-family: SpaceGrotesk, Arial, Helvetica, sans-serif;
-    font-size: 1.2em;
+    font-size: 1em;
+    display: block;
+}
+
+h1 {
+    color: var(--main-font-color);
+    font-size: 3em;
+    font-weight: 500;
+    margin: -20px 0 0 5px;
+}
+
+h1 > span {
+    color: var(--secondary-font-color);
+    font-size: 1.5em;
+}
+
+#about {
+    background-color: var(--secondary-background-color);
+    height: 50vh;
+}
+
+#about-text {
+    margin: 0 10px;
+    color: var(--secondary-font-color);
+    font-size: .9em;
+}
+
+#skill-container {
+    display: flex;
+}
+
+.skill-wrapper {
+    background-color: var(--secondary-accent-color);
+    height: 110px;
+    width: 110px;
+    border-radius: 50%;
+    margin: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.skills {
+    font-size: .8em;
+    font-weight: 500;
+}
+
+#project-gallery {
+    height: 140vh;
+    background-color: var(--main-background-color);
 }
 
 #projects {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
     gap: 20px;
 }
 
 .project-part {
-    background-color: var(--secondary-background-color);
+    border: 1px solid var(--secondary-background-color);
     border-radius: 5px;
     height: fit-content;
     width: fit-content;
-    box-shadow: -1px 7px 15px 3px rgba(0,0,0,0.75);
+    padding: 5px;
 }
 
 .project-image {
@@ -119,7 +175,7 @@ h1 > span {
     width: 250px;
     display: block;
     border-radius: 5px;
-    margin: 17px;
+    margin: 15px;
 }
 
 .image-part:hover {
@@ -127,23 +183,40 @@ h1 > span {
 }
 
 .project-description {
-    width: 250px;
+    width: 280px;
 }
 
 .portfolio-title, .portfolio-under-title, .portfolio-description, .filter-projects {
     color: var(--main-font-color);
-    font-family: SpaceGrotesk, Arial, Helvetica, sans-serif;
-    margin: 10px 17px;
+    margin: 10px 6px;
 }
 
 .portfolio-title {
-    display: block;
-    font-size: 1.4em;
+    display: inline-block;
+    font-size: 1.2em;
+    font-weight: 550;
+}
+
+.filter-projects {
+    font-size: .8em;
+}
+
+.portfolio-under-title {
+    font-size: 1em;
+    font-weight: 50-0;
+}
+
+.portfolio-description {
+    font-size: .9em;
+    font-weight: 400;
+}
+
+#contact-page {
+    background-color: var(--secondary-background-color);
+    height: 55vh;
 }
 
 #contact-wrapper {
-    background-color: var(--main-background-color);
-    box-shadow: 0px 6px 10px 1px rgba(0,0,0,0.75);
     border-radius: 40px;
     height: fit-content;
     width: 340px;
@@ -159,7 +232,9 @@ h1 > span {
 }
 
 h2 {
-    font-family: Chilanka, Arial, Helvetica, sans-serif;
+    font-size: 1.4em;
+    font-weight: 500;
+    color: var(--main-font-color);
 }
 
 #contact-description {
@@ -195,14 +270,13 @@ input, textarea {
     padding: 5px;
     margin: 3px;
     border-radius: 5px;
-    border: 2px solid var(--secondary-background-color);
-    font-family: Chilanka, Arial, Helvetica, sans-serif;
+    border: 1px solid var(--main-font-color);
     width: 130px;
 }
 
 textarea {
     height: 130px;
-    width: 200px;
+    width: 197px;
 }
 
 button {
@@ -210,8 +284,7 @@ button {
     padding: 10px;
     margin: 3px;
     border-radius: 5px;
-    border: 2px solid var(--secondary-accent-color);
-    font-family: Chilanka, Arial, Helvetica, sans-serif;
+    border: none;
     max-height: fit-content;
 }
 
@@ -225,27 +298,18 @@ button:hover {
 footer {
     position: relative;
     bottom: 0;
+    background-color: var(--secondary-background-color);
+}
+
+#footer-wrapper > p {
+    font-size: .9em;
+    margin-left: 10px;
 }
 /*footer style - end*/
 
 @font-face {
-    font-family: PixelifySans;
-    src: url(PixelifySans-VariableFont_wght.ttf);
-}
-
-@font-face {
-    font-family: SpaceGrotesk;
-    src: url(SpaceGrotesk-VariableFont_wght.ttf);
-}
-
-@font-face {
-    font-family: CherryBombOne;
-    src: url(CherryBombOne-Regular.ttf);
-}
-
-@font-face {
-    font-family: Chilanka;
-    src: url(Chilanka-Regular.ttf);
+    font-family: Inter;
+    src: url(Inter-VariableFont_opsz\,wght.ttf);
 }
 
 @media screen and (min-width: 481px) {
@@ -273,6 +337,13 @@ footer {
 }
 
 @media screen and (min-width: 769px) {
+    a {
+        font-size: 1em;
+    }
+    #profile-picture {
+        width: 190px;
+        height: 190px;
+    }
     h1 {
         font-size: 4.3em;
     }
@@ -282,16 +353,28 @@ footer {
     #introduction {
         height: 100vh;
     }
-    #contact-form {
-        height: fit-content;
+    #about-text-wrapper {
+        width: 500px;
+    }
+    #about-text {
+        font-size: 1em;
+    }
+    .skill-wrapper {
+        height: 130px;
+        width: 130px;
+        margin: 19px;
+    }
+    .skills {
+        font-size: 1em;
+        font-weight: 400;
     }
     #project-gallery {
-        height: fit-content;
+        height: 90vh;
         margin-bottom: 50px;
     }
     #projects {
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 1fr;
+        grid-template-rows: 1fr;
     }
     .project-part {
         height: 630px;
@@ -303,6 +386,9 @@ footer {
     }
     .project-description {
         width: 270px;
+    }
+    #contact-form {
+        height: fit-content;
     }
     #contact-wrapper {
         width: 500px;
@@ -328,21 +414,6 @@ footer {
 @media screen and (min-width: 1025px) {
     #nav-links-wrapper {
         margin: 10px 10px 5px 0px;
-    }
-    h1 {
-        font-size: 6.5em;
-    }
-    .presentation-text {
-        font-size: 2.5em;
-    } 
-    #project-gallery, #contact-page {
-        height: 100vh;
-        margin-bottom: auto;
-    }
-    #projects {
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        grid-template-rows: 1fr;
-        gap: 30px;
     }
     .project-image {
         width: 360px;
