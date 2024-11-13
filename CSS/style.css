@@ -1,12 +1,12 @@
 /*General style - start*/
 :root {
-    --main-background-color: #fdf7e9;
-    --secondary-background-color: #92aa6f;
+    --main-background-color: #ffebdb;
+    --secondary-background-color: #ad7d5c;
     --third-color: white;
-    --main-font-color: #0e1a02;
+    --main-font-color: #251505;
     --secondary-font-color: black;
-    --main-accent-color: #a73333;
-    --secondary-accent-color: #c56458;
+    --main-accent-color: #8C3E34;
+    --secondary-accent-color: #58231D;
 }
 
 * {
@@ -101,7 +101,6 @@ header li {
     margin-right: auto;
 }
 
-
 .presentation-text {
     font-size: 1em;
     display: block;
@@ -115,7 +114,7 @@ h1 {
 }
 
 h1 > span {
-    color: var(--secondary-font-color);
+    color: var(--secondary-accent-color);
     font-size: 1.5em;
 }
 
@@ -135,7 +134,7 @@ h1 > span {
 }
 
 .skill-wrapper {
-    background-color: var(--secondary-accent-color);
+    background-color: var(--main-accent-color);
     height: 110px;
     width: 110px;
     border-radius: 50%;
@@ -148,6 +147,7 @@ h1 > span {
 .skills {
     font-size: .8em;
     font-weight: 500;
+    color: var(--third-color);
 }
 
 #project-gallery {
@@ -280,7 +280,7 @@ textarea {
 }
 
 button {
-    background-color: var(--secondary-accent-color);
+    background-color: var(--main-accent-color);
     padding: 10px;
     margin: 3px;
     border-radius: 5px;
@@ -289,9 +289,21 @@ button {
 }
 
 button:hover {
-    background-color: var(--main-accent-color);
+    background-color: var(--secondary-accent-color);
 }
 
+#arrow-up {
+    color: var(--main-background-color);
+    font-size: 2.5em;
+    padding: 5px;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 50px;
+}
+
+#arrow-up:hover {
+    color: var(--secondary-accent-color);
+}
 /*main style - end*/
 
 /*footer style - start*/
