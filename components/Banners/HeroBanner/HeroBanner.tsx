@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function HeroBanner() {
   return (
     <section
@@ -7,10 +9,12 @@ export default function HeroBanner() {
     >
       <div id="presentation">
         <div id="profile-wrapper">
-          <img
-            src="images/1724068043447.jpg"
-            rel="profile picture"
+          <Image
+            src="/assets/images/profile.jpg"
+            width={500}
+            height={500}
             id="profile-picture"
+            alt="Profile picture"
           />
         </div>
         <p className="presentation-text">Hej mitt namn är</p>

@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function Projects() {
   return (
     <section
@@ -10,9 +12,11 @@ export default function Projects() {
         <div className="project-part">
           <div className="image-wrap">
             <a className="image-part" href="https://lalles-friends.vercel.app/">
-              <img
+              <Image
                 className="project-image"
-                src="images/lalles-vanner.png"
+                src="/assets/images/lalles-vanner.png"
+                width={500}
+                height={500}
                 alt="Utklipp från huvudsidan från Lalles Vänner"
               />
             </a>
@@ -34,9 +38,11 @@ export default function Projects() {
         <div className="project-part">
           <div className="image-wrap">
             <a className="image-part" href="how.html">
-              <img
+              <Image
                 className="project-image"
-                src="images/Howl-ux.png"
+                src="/assets/images/Howl-ux.png"
+                width={500}
+                height={500}
                 alt="Utklipp från huvudsidan från How"
               />
             </a>

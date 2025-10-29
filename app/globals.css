@@ -1,26 +1,451 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --main-background-color: #ffebdb;
+  --secondary-background-color: #ad7d5c;
+  --third-color: white;
+  --main-font-color: #251505;
+  --secondary-font-color: black;
+  --main-accent-color: #8c3e34;
+  --secondary-accent-color: #58231d;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: Inter, Arial, Helvetica, sans-serif;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  height: 100%;
+  background-color: var(--secondary-background-color);
+}
+
+p {
+  color: var(--main-font-color);
+  font-size: 1em;
+}
+
+a {
+  color: var(--secondary-font-color);
+  font-weight: 450;
+  text-decoration: none;
+  font-size: 0.8em;
+}
+
+a:hover {
+  color: var(--main-accent-color);
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+/*General style - end*/
+
+/*Header style - start*/
+header {
+  background-color: var(--main-background-color);
+  background-size: cover;
+}
+
+#header {
+  display: flex;
+  justify-content: space-around;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+#nav-links-wrapper {
+  width: fit-content;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar {
+  padding: 2px 16px;
+}
+
+header li {
+  list-style: none;
+  display: inline-block;
+  padding: 0 7px;
+}
+/*Header style - end*/
+
+/*main style - start*/
+#introduction {
+  height: 77vh;
+  background-color: var(--main-background-color);
+}
+
+#presentation {
+  margin: 0px 15px;
+}
+
+#profile-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 50px;
+}
+
+#profile-picture {
+  border-radius: 50%;
+  width: 130px;
+  height: 130px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.presentation-text {
+  font-size: 1em;
+  display: block;
+}
+
+h1 {
+  color: var(--main-font-color);
+  font-size: 3em;
+  font-weight: 500;
+  margin: -20px 0 0 5px;
+}
+
+h1 > span {
+  color: var(--secondary-accent-color);
+  font-size: 1.5em;
+}
+
+#about {
+  background-color: var(--secondary-background-color);
+  height: 50vh;
+}
+
+#about-text {
+  margin: 0 10px;
+  color: var(--secondary-font-color);
+  font-size: 0.9em;
+}
+
+#skill-container {
+  display: flex;
+}
+
+.skill-wrapper {
+  background-color: var(--main-accent-color);
+  height: 110px;
+  width: 110px;
+  border-radius: 50%;
+  margin: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.skills {
+  font-size: 0.8em;
+  font-weight: 500;
+  color: var(--third-color);
+}
+
+#project-gallery {
+  height: 140vh;
+  background-color: var(--main-background-color);
+}
+
+#projects {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 20px;
+}
+
+.project-part {
+  border: 1px solid var(--secondary-background-color);
+  border-radius: 5px;
+  height: fit-content;
+  width: fit-content;
+  padding: 5px;
+}
+
+.project-image {
+  height: auto;
+  width: 250px;
+  display: block;
+  border-radius: 5px;
+  margin: 15px;
+}
+
+.image-part:hover {
+  opacity: 60%;
+}
+
+.project-description {
+  width: 280px;
+}
+
+.portfolio-title,
+.portfolio-under-title,
+.portfolio-description,
+.filter-projects {
+  color: var(--main-font-color);
+  margin: 10px 6px;
+}
+
+.portfolio-title {
+  display: inline-block;
+  font-size: 1.2em;
+  font-weight: 550;
+}
+
+.filter-projects {
+  font-size: 0.8em;
+}
+
+.portfolio-under-title {
+  font-size: 1em;
+  font-weight: 50-0;
+}
+
+.portfolio-description {
+  font-size: 0.9em;
+  font-weight: 400;
+}
+
+#contact-page {
+  background-color: var(--secondary-background-color);
+  height: 55vh;
+}
+
+#contact-wrapper {
+  border-radius: 40px;
+  height: fit-content;
+  width: 340px;
+  padding-bottom: 20px;
+  margin-bottom: 10px;
+}
+
+#contact-information {
+  text-align: center;
+  width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+h2 {
+  font-size: 1.4em;
+  font-weight: 500;
+  color: var(--main-font-color);
+}
+
+#contact-description {
+  font-size: 0.9em;
+}
+
+.social-media {
+  display: inline-flex;
+}
+
+.social-media a {
+  color: var(--main-font-color);
+}
+
+.social-media a:hover {
+  color: var(--main-accent-color);
+}
+
+.social-media a {
+  padding: 5px;
+  font-size: 1.5em;
+}
+
+form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 10px;
+}
+
+input,
+textarea {
+  padding: 5px;
+  margin: 3px;
+  border-radius: 5px;
+  border: 1px solid var(--main-font-color);
+  width: 130px;
+}
+
+textarea {
+  height: 130px;
+  width: 197px;
+}
+
+button {
+  background-color: var(--main-accent-color);
+  padding: 10px;
+  margin: 3px;
+  border-radius: 5px;
+  border: none;
+  max-height: fit-content;
+}
+
+button:hover {
+  background-color: var(--secondary-accent-color);
+}
+
+#arrow-up {
+  color: var(--main-background-color);
+  font-size: 2.5em;
+  padding: 5px;
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 50px;
+}
+
+#arrow-up:hover {
+  color: var(--secondary-accent-color);
+}
+/*main style - end*/
+
+/*footer style - start*/
+footer {
+  position: relative;
+  bottom: 0;
+  background-color: var(--secondary-background-color);
+}
+
+#footer-wrapper > p {
+  font-size: 0.9em;
+  margin-left: 10px;
+}
+/*footer style - end*/
+
+@font-face {
+  font-family: Inter;
+  src: url("../public/assets/Inter-VariableFont_opsz\,wght.ttf");
+}
+
+@media screen and (min-width: 481px) {
+  #header {
+    justify-content: space-between;
+  }
+  .navbar {
+    padding: 5px 10px;
+  }
+  a {
+    font-size: 0.9em;
+  }
+  .project-image {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .project-description {
+    width: 340px;
+  }
+  #contact-wrapper {
+    width: 370px;
+    padding-bottom: 20px;
+    margin-bottom: 10px;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  a {
+    font-size: 1em;
+  }
+  #profile-picture {
+    width: 190px;
+    height: 190px;
+  }
+  h1 {
+    font-size: 4.3em;
+  }
+  .presentation-text {
+    font-size: 1.7em;
+  }
+  #introduction {
+    height: 100vh;
+  }
+  #about-text-wrapper {
+    width: 500px;
+  }
+  #about-text {
+    font-size: 1em;
+  }
+  .skill-wrapper {
+    height: 130px;
+    width: 130px;
+    margin: 19px;
+  }
+  .skills {
+    font-size: 1em;
+    font-weight: 400;
+  }
+  #project-gallery {
+    height: 90vh;
+    margin-bottom: 50px;
+  }
+  #projects {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+  }
+  .project-part {
+    height: 630px;
+    width: fit-content;
+  }
+  .project-image {
+    width: 270px;
+    margin: 17px;
+  }
+  .project-description {
+    width: 270px;
+  }
+  #contact-form {
+    height: fit-content;
+  }
+  #contact-wrapper {
+    width: 500px;
+    height: fit-content;
+    padding-bottom: 20px;
+    margin-bottom: 10px;
+  }
+  #contact-information {
+    width: 400px;
+  }
+  #contact-description {
+    font-size: 1.2em;
+  }
+  input {
+    padding: 8px;
+    margin: 4px;
+    width: 180px;
+  }
+  textarea {
+    width: 297px;
+  }
+}
+@media screen and (min-width: 1025px) {
+  #nav-links-wrapper {
+    margin: 10px 10px 5px 0px;
+  }
+  .project-image {
+    width: 360px;
+  }
+  .project-description {
+    width: 380px;
+  }
+  .portfolio-title {
+    display: inline;
+    font-size: 1.7em;
+  }
+  #contact-wrapper {
+    height: 500px;
+  }
+  textarea {
+    height: 170px;
+  }
 }
