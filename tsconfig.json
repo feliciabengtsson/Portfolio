@@ -29,6 +29,6 @@
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
     "**/*.mts"
-, "components/Banners/ContactBanner", "components/Checkbox", "components/Menubar"  ],
+, "components/Banners/ContactBanner"  ],
   "exclude": ["node_modules"]
 }
