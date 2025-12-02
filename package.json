@@ -67,6 +67,7 @@
     "eslint-config-next": "16.0.1",
     "postcss": "^8.4.31",
     "tailwindcss": "^4.1.17",
+    "tailwindcss-animate": "^1.0.7",
     "typescript": "^5"
   }
 }

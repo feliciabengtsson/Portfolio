@@ -32,6 +32,7 @@ export default function ProjectCard({
       <Card className="overflow-hidden border-2 hover:border-primary transition-all duration-300 bg-card shadow-[var(--soft-shadow)] hover:shadow-[var(--glow-shadow)]">
         <div className="aspect-video bg-gradient-to-br from-primary/20 via-secondary/20 to-accent/20 relative overflow-hidden">
           {image ? (
+            // eslint-disable-next-line @next/next/no-img-element
             <img
               src={image}
               alt={title}
