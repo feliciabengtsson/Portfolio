@@ -1,4 +1,4 @@
-@import "tailwindcss";
+/* @import "tailwindcss";
 
 :root {
   --main-background-color: #ffebdb;
@@ -47,6 +47,7 @@ section {
 /*General style - end*/
 
 /*Header style - start*/
+/*
 header {
   background-color: var(--main-background-color);
   background-size: cover;
@@ -78,6 +79,7 @@ header li {
 /*Header style - end*/
 
 /*main style - start*/
+/*
 #introduction {
   height: 77vh;
   background-color: var(--main-background-color);
@@ -312,6 +314,7 @@ button:hover {
 /*main style - end*/
 
 /*footer style - start*/
+/*
 footer {
   position: relative;
   bottom: 0;
@@ -323,7 +326,7 @@ footer {
   margin-left: 10px;
 }
 /*footer style - end*/
-
+/*
 @font-face {
   font-family: Inter;
   src: url("../public/assets/Inter-VariableFont_opsz\,wght.ttf");
@@ -449,3 +452,4 @@ footer {
     height: 170px;
   }
 }
+ */
