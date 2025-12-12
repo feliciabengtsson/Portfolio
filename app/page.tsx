@@ -65,7 +65,7 @@ export default function HomePage() {
     <div className="min-h-screen">
       {/* HERO SECTION */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-[var(--warm-gradient)] opacity-10" />
+        <div className="absolute inset-0 bg-(--warm-gradient) opacity-10" />
 
         <div className="container mx-auto px-6 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -77,22 +77,21 @@ export default function HomePage() {
               <h1 className="text-5xl md:text-7xl font-display font-bold mb-6 leading-tight">
                 Creative
                 <br />
-                <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
+                <span className="bg-linear-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
                   Developer
                 </span>
                 <br /> & Digital Artist
               </h1>
 
               <p className="text-xl text-muted-foreground mb-8 leading-relaxed max-w-lg">
-                Crafting beautiful, interactive web experiences that blend code
-                and creativity. Specializing in 3D graphics and modern frontend
-                development.
+                Crafting beautiful, interactive web experiences that blend code and
+                creativity. Specializing in 3D graphics and modern frontend development.
               </p>
 
               <div className="flex flex-wrap gap-4">
                 <Button
                   size="lg"
-                  className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-[var(--glow-shadow)] transition-all duration-300 hover:scale-105 font-semibold"
+                  className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-(--glow-shadow) transition-all duration-300 hover:scale-105 font-semibold"
                 >
                   View My Work
                   <ArrowRight className="ml-2 w-5 h-5" />
@@ -142,7 +141,7 @@ export default function HomePage() {
 
       {/* ABOUT SECTION */}
       <section className="py-24 bg-card relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-primary/5 to-transparent" />
+        <div className="absolute top-0 right-0 w-1/3 h-full bg-linear-to-l from-primary/5 to-transparent" />
 
         <div className="container mx-auto px-6 relative z-10">
           <motion.div
@@ -152,13 +151,11 @@ export default function HomePage() {
             transition={{ duration: 0.6 }}
             className="max-w-3xl mx-auto text-center"
           >
-            <h2 className="text-4xl md:text-5xl font-display font-bold mb-6">
-              About Me
-            </h2>
+            <h2 className="text-4xl md:text-5xl font-display font-bold mb-6">About Me</h2>
 
             <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-              I&apos;m a frontend developer and digital artist passionate about
-              creating immersive web experiences...
+              I&apos;m a frontend developer and digital artist passionate about creating
+              immersive web experiences...
             </p>
 
             <div className="flex justify-center gap-6 mb-12">
@@ -191,18 +188,19 @@ export default function HomePage() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
+                transition={{
+                  duration: 0.5,
+                  delay: index * 0.1,
+                }}
               >
-                <Card className="text-center hover:shadow-[var(--glow-shadow)] transition-all duration-300 hover:-translate-y-2">
+                <Card className="text-center hover:shadow-(--glow-shadow) transition-all duration-300 hover:-translate-y-2">
                   <CardContent className="pt-8 pb-6">
                     <div
-                      className={`w-16 h-16 mx-auto mb-4 rounded-2xl bg-gradient-to-br ${skill.color} flex items-center justify-center`}
+                      className={`w-16 h-16 mx-auto mb-4 rounded-2xl bg-linear-to-br ${skill.color} flex items-center justify-center`}
                     >
                       <skill.icon className="w-8 h-8 text-white" />
                     </div>
-                    <h3 className="text-xl font-display font-semibold">
-                      {skill.name}
-                    </h3>
+                    <h3 className="text-xl font-display font-semibold">{skill.name}</h3>
                   </CardContent>
                 </Card>
               </motion.div>
@@ -225,25 +223,21 @@ export default function HomePage() {
               Featured Projects
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              A selection of recent work showcasing my passion for interactive
-              design and creative coding.
+              A selection of recent work showcasing my passion for interactive design and
+              creative coding.
             </p>
           </motion.div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
             {projects.map((project, index) => (
-              <ProjectCard
-                key={project.title}
-                {...project}
-                delay={index * 0.1}
-              />
+              <ProjectCard key={project.title} {...project} delay={index * 0.1} />
             ))}
           </div>
         </div>
       </section>
 
       {/* CONTACT */}
-      <section className="py-24 bg-gradient-to-br from-primary/10 via-accent/5 to-secondary/10 relative overflow-hidden">
+      <section className="py-24 bg-linear-to-br from-primary/10 via-accent/5 to-secondary/10 relative overflow-hidden">
         <div className="container mx-auto px-6 relative z-10">
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
@@ -262,7 +256,7 @@ export default function HomePage() {
 
             <Button
               size="lg"
-              className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-[var(--glow-shadow)] transition-all duration-300 hover:scale-105 font-semibold text-lg px-8"
+              className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-(--glow-shadow) transition-all duration-300 hover:scale-105 font-semibold text-lg px-8"
             >
               <Mail className="mr-2 w-5 h-5" />
               Start a Conversation

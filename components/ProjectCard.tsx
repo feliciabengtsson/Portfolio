@@ -29,15 +29,11 @@ export default function ProjectCard({
       transition={{ duration: 0.5, delay }}
       whileHover={{ y: -8 }}
     >
-      <Card className="overflow-hidden border-2 hover:border-primary transition-all duration-300 bg-card shadow-[var(--soft-shadow)] hover:shadow-[var(--glow-shadow)]">
-        <div className="aspect-video bg-gradient-to-br from-primary/20 via-secondary/20 to-accent/20 relative overflow-hidden">
+      <Card className="overflow-hidden border-2 hover:border-primary transition-all duration-300 bg-card shadow-(--soft-shadow) hover:shadow-(--glow-shadow)">
+        <div className="aspect-video bg-linear-to-br from-primary/20 via-secondary/20 to-accent/20 relative overflow-hidden">
           {image ? (
             // eslint-disable-next-line @next/next/no-img-element
-            <img
-              src={image}
-              alt={title}
-              className="w-full h-full object-cover"
-            />
+            <img src={image} alt={title} className="w-full h-full object-cover" />
           ) : (
             <div className="w-full h-full flex items-center justify-center">
               <div className="text-6xl font-display font-bold text-primary/30">
@@ -50,9 +46,7 @@ export default function ProjectCard({
           <h3 className="text-2xl font-display font-bold mb-3 text-foreground">
             {title}
           </h3>
-          <p className="text-muted-foreground mb-4 leading-relaxed">
-            {description}
-          </p>
+          <p className="text-muted-foreground mb-4 leading-relaxed">{description}</p>
           <div className="flex flex-wrap gap-2 mb-4">
             {tags.map((tag) => (
               <span
