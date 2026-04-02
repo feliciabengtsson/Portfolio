@@ -1,298 +1,520 @@
 "use client";
 
+import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import {
   ArrowRight,
-  Mail,
-  Github,
-  Linkedin,
   Code2,
+  Download,
   Palette,
   Sparkles,
+  type LucideIcon,
 } from "lucide-react";
-import { Button } from "@/components/ui/Button";
-import { Card, CardContent } from "@/components/ui/Card";
 import Hero3D from "@/components/Hero3D";
 import ProjectCard from "@/components/ProjectCard";
+import { Button } from "@/components/ui/Button";
+import { Card, CardContent } from "@/components/ui/Card";
+
+const cvUrl = "/assets/images/CV%20FEU%20alt.%202.pdf";
+
+const strengths: Array<{
+  title: string;
+  description: string;
+  icon: LucideIcon;
+}> = [
+  {
+    title: "Frontend med riktning",
+    description:
+      "Jag bygger gränssnitt som känns tydliga, moderna och genomtänkta hela vägen från struktur till detaljer.",
+    icon: Code2,
+  },
+  {
+    title: "UX som märks i flödet",
+    description:
+      "Navigation, hierarki och innehåll ska hjälpa användaren framåt, inte bara se snygga ut i en mockup.",
+    icon: Palette,
+  },
+  {
+    title: "Kreativitet med funktion",
+    description:
+      "Animationer, färg och 3D får gärna sticka ut, men de ska alltid förstärka upplevelsen och berättelsen.",
+    icon: Sparkles,
+  },
+];
+
+const profileFacts = [
+  {
+    label: "Fokus",
+    value: "React, Next.js och TypeScript",
+  },
+  {
+    label: "Styrka",
+    value: "UX/UI, komponenttänk och tydlig struktur",
+  },
+  {
+    label: "Nästa steg",
+    value: "Djupare case studies och fler liveprojekt",
+  },
+];
+
+const processSteps = [
+  {
+    step: "01",
+    title: "Förstå behovet",
+    description:
+      "Jag börjar med flöden, innehåll och vad användaren faktiskt behöver kunna göra utan friktion.",
+  },
+  {
+    step: "02",
+    title: "Forma en tydlig riktning",
+    description:
+      "Typografi, hierarki och komponenter behöver kännas konsekventa så att sidan får en stark identitet.",
+  },
+  {
+    step: "03",
+    title: "Bygga för vidareutveckling",
+    description:
+      "Jag tänker i återanvändbara delar, läsbar kod och animationer som går att utveckla vidare över tid.",
+  },
+];
+
+const projects = [
+  {
+    title: "HOW",
+    role: "UX/UI-koncept och informationsarkitektur",
+    description:
+      "Ett koncept för en lugnare lärplattform där ämnen, schema och vardagens viktigaste uppgifter blir lättare att hitta.",
+    tags: ["UX/UI", "Figma", "Designsystem"],
+    highlights: [
+      "Tydligare ämnesöversikt för elever",
+      "Lugn färgpalett och bättre visuell hierarki",
+      "Fokus på begriplighet i vardagliga flöden",
+    ],
+    image: "/assets/images/Howl-ux.png",
+    imageAlt: "HOW-plattform med ämneskort och sidomeny",
+    status: "Koncept",
+    ctaNote: "Case study byggs ut i nästa fas.",
+  },
+  {
+    title: "Lalles Vänner",
+    role: "Frontend, innehållsstruktur och visuell känsla",
+    description:
+      "En webbplats för ett jazzband där spelningar, galleri och kontakt behöver kännas både personliga och enkla att hitta.",
+    tags: ["HTML", "CSS", "Responsiv design"],
+    highlights: [
+      "Mer karaktär i uttrycket än en standardmall",
+      "Tydligare vägar till kontakt och bokning",
+      "Anpassad layout för att lyfta bandets identitet",
+    ],
+    image: "/assets/images/lalles-vanner.png",
+    imageAlt: "Startsida för Lalles Vänner med stark scenbild och orange informationskort",
+    status: "Kundprojekt",
+    ctaNote: "Processen bakom designvalen läggs till som nästa case study.",
+  },
+  {
+    title: "Portfolio V2",
+    role: "Next.js, motion och innehållsstrategi",
+    description:
+      "Min egen portfolio byggs om för att visa mer än bara design: den ska tydligt förklara hur jag tänker, bygger och förbättrar.",
+    tags: ["Next.js", "TypeScript", "Framer Motion"],
+    highlights: [
+      "Tydligare hero med personlig positionering",
+      "Projektsektion byggd för riktiga case studies",
+      "Grund lagd för bättre SEO och mer trovärdig storytelling",
+    ],
+    status: "Pågående",
+    ctaNote: "Fler projektsidor, sociala länkar och verifiering prioriteras härnäst.",
+  },
+];
 
 export default function HomePage() {
-  const skills = [
-    {
-      name: "React & Next.js",
-      icon: Code2,
-      color: "from-primary to-primary/80",
-    },
-    {
-      name: "Three.js & WebGL",
-      icon: Sparkles,
-      color: "from-accent to-accent/80",
-    },
-    {
-      name: "UI/UX Design",
-      icon: Palette,
-      color: "from-secondary to-secondary/80",
-    },
-  ];
-
-  const projects = [
-    {
-      title: "Interactive 3D Portfolio",
-      description:
-        "A cutting-edge portfolio website featuring immersive 3D experiences and smooth animations.",
-      tags: ["React", "Three.js", "Framer Motion"],
-      liveUrl: "#",
-      githubUrl: "#",
-    },
-    {
-      title: "E-commerce Platform",
-      description:
-        "Modern shopping experience with real-time inventory and seamless checkout flow.",
-      tags: ["Next.js", "TypeScript", "Stripe"],
-      liveUrl: "#",
-      githubUrl: "#",
-    },
-    {
-      title: "Digital Art Gallery",
-      description:
-        "Curated showcase of digital artwork with interactive galleries and artist profiles.",
-      tags: ["React", "WebGL", "GSAP"],
-      liveUrl: "#",
-      githubUrl: "#",
-    },
-  ];
+  const year = new Date().getFullYear();
 
   return (
     <div className="min-h-screen">
-      {/* HERO SECTION */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-(--warm-gradient) opacity-10" />
+      <header className="sticky top-0 z-50 border-b border-white/60 bg-background/80 backdrop-blur-xl">
+        <div className="container flex items-center justify-between px-6 py-4">
+          <Link href="/" className="text-sm font-semibold uppercase tracking-[0.22em] text-primary">
+            Felicia Bengtsson
+          </Link>
 
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <nav className="hidden items-center gap-6 text-sm text-muted-foreground md:flex">
+            <Link href="#about" className="transition-colors hover:text-foreground">
+              Om mig
+            </Link>
+            <Link href="#projects" className="transition-colors hover:text-foreground">
+              Projekt
+            </Link>
+            <Link href="#process" className="transition-colors hover:text-foreground">
+              Process
+            </Link>
+            <Link href="#contact" className="transition-colors hover:text-foreground">
+              Kontakt
+            </Link>
+          </nav>
+
+          <Button asChild size="sm" className="hidden shadow-(--soft-shadow) md:inline-flex">
+            <a href={cvUrl} target="_blank" rel="noreferrer">
+              CV
+            </a>
+          </Button>
+        </div>
+      </header>
+
+      <main>
+        <section className="relative overflow-hidden pb-24 pt-16 sm:pb-28 sm:pt-24">
+          <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.9),transparent_38%)]" />
+
+          <div className="container px-6">
+            <div className="grid items-center gap-12 lg:grid-cols-[1.1fr_0.9fr]">
+              <motion.div
+                initial={{ opacity: 0, y: 24 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7 }}
+                className="max-w-3xl"
+              >
+                <div className="inline-flex rounded-full border border-primary/15 bg-white/80 px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-primary shadow-(--soft-shadow)">
+                  Frontendutvecklare med UX-fokus
+                </div>
+
+                <h1 className="mt-6 text-5xl font-bold leading-[0.95] text-foreground sm:text-6xl lg:text-7xl">
+                  Jag bygger varma, tydliga och visuellt starka webbupplevelser.
+                </h1>
+
+                <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground sm:text-xl">
+                  Portfolio för Felicia Bengtsson. Jag kombinerar frontendutveckling,
+                  UX-tänk och kreativ design för att skapa digitala produkter som känns
+                  genomarbetade från första klicket.
+                </p>
+
+                <div className="mt-8 flex flex-wrap gap-4">
+                  <Button
+                    asChild
+                    size="lg"
+                    className="shadow-(--glow-shadow) transition-transform duration-300 hover:scale-[1.02]"
+                  >
+                    <Link href="#projects">
+                      Se utvalda projekt
+                      <ArrowRight className="h-5 w-5" />
+                    </Link>
+                  </Button>
+
+                  <Button
+                    asChild
+                    variant="outline"
+                    size="lg"
+                    className="border-primary/20 bg-white/70 text-foreground shadow-(--soft-shadow)"
+                  >
+                    <a href={cvUrl} target="_blank" rel="noreferrer">
+                      <Download className="h-5 w-5" />
+                      Ladda ner CV
+                    </a>
+                  </Button>
+                </div>
+
+                <div className="mt-8 flex flex-wrap gap-3">
+                  {[
+                    "React & Next.js",
+                    "UX/UI med struktur",
+                    "Motion och creative frontend",
+                  ].map((item) => (
+                    <span
+                      key={item}
+                      className="rounded-full border border-border/70 bg-white/70 px-4 py-2 text-sm text-muted-foreground shadow-(--soft-shadow)"
+                    >
+                      {item}
+                    </span>
+                  ))}
+                </div>
+              </motion.div>
+
+              <div className="grid gap-6 lg:pl-8">
+                <motion.div
+                  initial={{ opacity: 0, x: 24 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.7, delay: 0.15 }}
+                  className="overflow-hidden rounded-[32px] border border-white/60 bg-white/80 p-6 shadow-(--soft-shadow) backdrop-blur-sm"
+                >
+                  <div className="grid gap-5 sm:grid-cols-[112px_1fr]">
+                    <div className="relative h-28 w-28 overflow-hidden rounded-[24px] border border-white/60 bg-secondary shadow-(--soft-shadow)">
+                      <Image
+                        src="/assets/images/profile.jpg"
+                        alt="Porträtt på Felicia Bengtsson"
+                        fill
+                        sizes="112px"
+                        className="object-cover"
+                      />
+                    </div>
+
+                    <div>
+                      <p className="text-xs font-semibold uppercase tracking-[0.24em] text-primary/80">
+                        Bas i Sverige
+                      </p>
+                      <h2 className="mt-2 text-3xl font-bold text-foreground">
+                        Felicia Bengtsson
+                      </h2>
+                      <p className="mt-3 max-w-xl text-sm leading-relaxed text-muted-foreground">
+                        Frontendutvecklare med öga för UX, visuellt uttryck och tydlig
+                        kommunikation. Jag trivs bäst i projekt där form och funktion får
+                        stärka varandra.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="mt-6 grid gap-3 sm:grid-cols-3">
+                    {profileFacts.map((fact) => (
+                      <div
+                        key={fact.label}
+                        className="rounded-[24px] border border-border/70 bg-secondary/35 p-4"
+                      >
+                        <p className="text-xs font-semibold uppercase tracking-[0.22em] text-primary/80">
+                          {fact.label}
+                        </p>
+                        <p className="mt-2 text-sm leading-relaxed text-foreground">
+                          {fact.value}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                </motion.div>
+
+                <motion.div
+                  initial={{ opacity: 0, x: 24 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.7, delay: 0.25 }}
+                  className="overflow-hidden rounded-[32px] border border-white/60 bg-white/80 shadow-(--soft-shadow) backdrop-blur-sm"
+                >
+                  <div className="flex flex-wrap items-start justify-between gap-4 px-6 pt-6">
+                    <div className="max-w-md">
+                      <p className="text-xs font-semibold uppercase tracking-[0.24em] text-primary/80">
+                        Creative Frontend
+                      </p>
+                      <h3 className="mt-2 text-2xl font-bold text-foreground">
+                        Motion och 3D med mening
+                      </h3>
+                      <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                        Jag vill att interaktioner ska ge energi och personlighet, men
+                        alltid stötta innehållet i stället för att distrahera från det.
+                      </p>
+                    </div>
+
+                    <span className="rounded-full border border-primary/20 bg-secondary/60 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-primary">
+                      Under utveckling
+                    </span>
+                  </div>
+
+                  <div className="h-[280px] sm:h-[320px]">
+                    <Hero3D />
+                  </div>
+                </motion.div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="about" className="py-24">
+          <div className="container px-6">
             <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.6 }}
+              className="max-w-3xl"
             >
-              <h1 className="text-5xl md:text-7xl font-display font-bold mb-6 leading-tight">
-                Creative
-                <br />
-                <span className="bg-linear-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
-                  Developer
-                </span>
-                <br /> & Digital Artist
-              </h1>
-
-              <p className="text-xl text-muted-foreground mb-8 leading-relaxed max-w-lg">
-                Crafting beautiful, interactive web experiences that blend code and
-                creativity. Specializing in 3D graphics and modern frontend development.
+              <p className="text-sm font-semibold uppercase tracking-[0.24em] text-primary/80">
+                Vad jag tar med till ett team
               </p>
+              <h2 className="mt-3 text-4xl font-bold text-foreground sm:text-5xl">
+                Jag vill bygga digitala upplevelser som känns genomarbetade, inte generiska.
+              </h2>
+              <p className="mt-5 text-lg leading-relaxed text-muted-foreground">
+                För mig handlar bra frontend inte bara om att få saker att fungera. Det
+                handlar om att skapa tydlighet, förtroende och en känsla av att varje
+                detalj är där av en anledning.
+              </p>
+            </motion.div>
 
-              <div className="flex flex-wrap gap-4">
-                <Button
-                  size="lg"
-                  className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-(--glow-shadow) transition-all duration-300 hover:scale-105 font-semibold"
+            <div className="mt-12 grid gap-6 md:grid-cols-3">
+              {strengths.map((strength, index) => (
+                <motion.div
+                  key={strength.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.2 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
                 >
-                  View My Work
-                  <ArrowRight className="ml-2 w-5 h-5" />
-                </Button>
+                  <Card className="h-full border-white/60 bg-white/75 shadow-(--soft-shadow) backdrop-blur-sm">
+                    <CardContent className="p-6">
+                      <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-linear-to-br from-primary to-accent text-white shadow-(--soft-shadow)">
+                        <strength.icon className="h-6 w-6" />
+                      </div>
+                      <h3 className="mt-5 text-2xl font-bold text-foreground">
+                        {strength.title}
+                      </h3>
+                      <p className="mt-3 leading-relaxed text-muted-foreground">
+                        {strength.description}
+                      </p>
+                    </CardContent>
+                  </Card>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
 
-                <Button
-                  variant="outline"
-                  size="lg"
-                  className="border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 font-semibold"
+        <section id="projects" className="py-24">
+          <div className="container px-6">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.6 }}
+              className="mx-auto max-w-3xl text-center"
+            >
+              <p className="text-sm font-semibold uppercase tracking-[0.24em] text-primary/80">
+                Utvalda projekt
+              </p>
+              <h2 className="mt-3 text-4xl font-bold text-foreground sm:text-5xl">
+                Projekt som visar hur jag kombinerar innehåll, UX och frontend.
+              </h2>
+              <p className="mt-5 text-lg leading-relaxed text-muted-foreground">
+                Här lyfter jag fram arbeten som visar både visuell känsla och hur jag
+                strukturerar upplevelser för riktiga användarbehov.
+              </p>
+            </motion.div>
+
+            <div className="mt-14 grid gap-8 lg:grid-cols-3">
+              {projects.map((project, index) => (
+                <ProjectCard key={project.title} {...project} delay={index * 0.1} />
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section id="process" className="py-24">
+          <div className="container px-6">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.6 }}
+              className="mx-auto max-w-3xl text-center"
+            >
+              <p className="text-sm font-semibold uppercase tracking-[0.24em] text-primary/80">
+                Så jobbar jag
+              </p>
+              <h2 className="mt-3 text-4xl font-bold text-foreground sm:text-5xl">
+                Från idé till färdig upplevelse med fokus på tydlighet.
+              </h2>
+            </motion.div>
+
+            <div className="mt-12 grid gap-6 lg:grid-cols-3">
+              {processSteps.map((step, index) => (
+                <motion.div
+                  key={step.step}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.2 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
                 >
-                  Get in Touch
-                </Button>
+                  <Card className="h-full border-white/60 bg-white/75 shadow-(--soft-shadow) backdrop-blur-sm">
+                    <CardContent className="p-6">
+                      <p className="text-xs font-semibold uppercase tracking-[0.24em] text-primary/80">
+                        Steg {step.step}
+                      </p>
+                      <h3 className="mt-4 text-2xl font-bold text-foreground">
+                        {step.title}
+                      </h3>
+                      <p className="mt-3 leading-relaxed text-muted-foreground">
+                        {step.description}
+                      </p>
+                    </CardContent>
+                  </Card>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section id="contact" className="pb-24 pt-10">
+          <div className="container px-6">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.98 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.6 }}
+              className="overflow-hidden rounded-[36px] border border-white/60 bg-linear-to-br from-white/85 via-white/80 to-secondary/55 p-8 shadow-(--glow-shadow) backdrop-blur-sm sm:p-10"
+            >
+              <div className="grid gap-8 lg:grid-cols-[1.15fr_0.85fr] lg:items-center">
+                <div>
+                  <p className="text-sm font-semibold uppercase tracking-[0.24em] text-primary/80">
+                    Nästa steg
+                  </p>
+                  <h2 className="mt-3 text-4xl font-bold text-foreground sm:text-5xl">
+                    Jag vill att portfoliot ska visa både personlighet och process.
+                  </h2>
+                  <p className="mt-5 max-w-2xl text-lg leading-relaxed text-muted-foreground">
+                    Fas 1 fokuserar på tydligare positionering, riktiga projekt och en
+                    mer professionell struktur. Härifrån kan sidan växa med djupare case
+                    studies, live-länkar och fler bevis på hur jag arbetar.
+                  </p>
+
+                  <div className="mt-8 flex flex-wrap gap-4">
+                    <Button
+                      asChild
+                      size="lg"
+                      className="shadow-(--glow-shadow) transition-transform duration-300 hover:scale-[1.02]"
+                    >
+                      <a href={cvUrl} target="_blank" rel="noreferrer">
+                        <Download className="h-5 w-5" />
+                        Ladda ner CV
+                      </a>
+                    </Button>
+
+                    <Button
+                      asChild
+                      variant="outline"
+                      size="lg"
+                      className="border-primary/20 bg-white/70 text-foreground shadow-(--soft-shadow)"
+                    >
+                      <Link href="#projects">
+                        Gå till projekten
+                        <ArrowRight className="h-5 w-5" />
+                      </Link>
+                    </Button>
+                  </div>
+                </div>
+
+                <div className="rounded-[28px] border border-border/70 bg-white/75 p-6 shadow-(--soft-shadow)">
+                  <p className="text-xs font-semibold uppercase tracking-[0.24em] text-primary/80">
+                    Prioriterat härnäst
+                  </p>
+                  <div className="mt-4 space-y-4 text-sm leading-relaxed text-muted-foreground">
+                    <p>Färdigställa djupare case studies med process, resultat och lärdomar.</p>
+                    <p>Lägga till riktiga länkar till GitHub, LinkedIn och liveprojekt.</p>
+                    <p>Verifiera bygget med installerade beroenden och fortsätta förbättra SEO.</p>
+                  </div>
+                </div>
               </div>
             </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="h-[500px] relative"
-            >
-              <Hero3D />
-            </motion.div>
           </div>
-        </div>
+        </section>
+      </main>
 
-        {/* SCROLL INDICATOR */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.5, duration: 1 }}
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-        >
-          <motion.div
-            animate={{ y: [0, 10, 0] }}
-            transition={{ repeat: Infinity, duration: 2 }}
-            className="w-6 h-10 border-2 border-primary rounded-full flex justify-center"
-          >
-            <motion.div
-              animate={{ y: [0, 12, 0] }}
-              transition={{ repeat: Infinity, duration: 2 }}
-              className="w-1.5 h-1.5 bg-primary rounded-full mt-2"
-            />
-          </motion.div>
-        </motion.div>
-      </section>
-
-      {/* ABOUT SECTION */}
-      <section className="py-24 bg-card relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-1/3 h-full bg-linear-to-l from-primary/5 to-transparent" />
-
-        <div className="container mx-auto px-6 relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="max-w-3xl mx-auto text-center"
-          >
-            <h2 className="text-4xl md:text-5xl font-display font-bold mb-6">About Me</h2>
-
-            <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-              I&apos;m a frontend developer and digital artist passionate about creating
-              immersive web experiences...
-            </p>
-
-            <div className="flex justify-center gap-6 mb-12">
-              <a
-                href="#"
-                className="text-primary hover:text-primary/80 transition-colors"
-              >
-                <Github className="w-6 h-6" />
-              </a>
-              <a
-                href="#"
-                className="text-primary hover:text-primary/80 transition-colors"
-              >
-                <Linkedin className="w-6 h-6" />
-              </a>
-              <a
-                href="#"
-                className="text-primary hover:text-primary/80 transition-colors"
-              >
-                <Mail className="w-6 h-6" />
-              </a>
-            </div>
-          </motion.div>
-
-          {/* SKILLS */}
-          <div className="grid md:grid-cols-3 gap-6 mt-16 max-w-4xl mx-auto">
-            {skills.map((skill, index) => (
-              <motion.div
-                key={skill.name}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{
-                  duration: 0.5,
-                  delay: index * 0.1,
-                }}
-              >
-                <Card className="text-center hover:shadow-(--glow-shadow) transition-all duration-300 hover:-translate-y-2">
-                  <CardContent className="pt-8 pb-6">
-                    <div
-                      className={`w-16 h-16 mx-auto mb-4 rounded-2xl bg-linear-to-br ${skill.color} flex items-center justify-center`}
-                    >
-                      <skill.icon className="w-8 h-8 text-white" />
-                    </div>
-                    <h3 className="text-xl font-display font-semibold">{skill.name}</h3>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* PROJECTS */}
-      <section className="py-24 relative">
-        <div className="container mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl md:text-5xl font-display font-bold mb-4">
-              Featured Projects
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              A selection of recent work showcasing my passion for interactive design and
-              creative coding.
-            </p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-            {projects.map((project, index) => (
-              <ProjectCard key={project.title} {...project} delay={index * 0.1} />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CONTACT */}
-      <section className="py-24 bg-linear-to-br from-primary/10 via-accent/5 to-secondary/10 relative overflow-hidden">
-        <div className="container mx-auto px-6 relative z-10">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="max-w-2xl mx-auto text-center"
-          >
-            <h2 className="text-4xl md:text-5xl font-display font-bold mb-6">
-              Let&apos;s Create Together
-            </h2>
-
-            <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-              Have a project in mind? I&apos;d love to hear about it.
-            </p>
-
-            <Button
-              size="lg"
-              className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-(--glow-shadow) transition-all duration-300 hover:scale-105 font-semibold text-lg px-8"
-            >
-              <Mail className="mr-2 w-5 h-5" />
-              Start a Conversation
-            </Button>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* FOOTER */}
-      <footer className="py-12 border-t border-border">
-        <div className="container mx-auto px-6">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-muted-foreground text-sm">
-              © 2024 Creative Developer. Crafted with passion.
-            </p>
-
-            <div className="flex gap-6">
-              <a
-                href="#"
-                className="text-muted-foreground hover:text-primary transition-colors"
-              >
-                <Github className="w-5 h-5" />
-              </a>
-              <a
-                href="#"
-                className="text-muted-foreground hover:text-primary transition-colors"
-              >
-                <Linkedin className="w-5 h-5" />
-              </a>
-              <a
-                href="#"
-                className="text-muted-foreground hover:text-primary transition-colors"
-              >
-                <Mail className="w-5 h-5" />
-              </a>
-            </div>
+      <footer className="border-t border-border/70 py-8">
+        <div className="container flex flex-col gap-3 px-6 text-sm text-muted-foreground md:flex-row md:items-center md:justify-between">
+          <p>{year} Felicia Bengtsson. Portfolio byggd i Next.js, TypeScript och Framer Motion.</p>
+          <div className="flex flex-wrap gap-4">
+            <Link href="#about" className="transition-colors hover:text-foreground">
+              Om mig
+            </Link>
+            <Link href="#projects" className="transition-colors hover:text-foreground">
+              Projekt
+            </Link>
+            <Link href="#contact" className="transition-colors hover:text-foreground">
+              Nästa steg
+            </Link>
           </div>
         </div>
       </footer>
