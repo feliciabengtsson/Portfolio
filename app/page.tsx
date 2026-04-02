@@ -12,9 +12,11 @@ import {
   type LucideIcon,
 } from "lucide-react";
 import Hero3D from "@/components/Hero3D";
+import PortfolioAssistant from "@/components/PortfolioAssistant";
 import ProjectCard from "@/components/ProjectCard";
 import { Button } from "@/components/ui/Button";
 import { Card, CardContent } from "@/components/ui/Card";
+import { projects } from "@/lib/projects";
 
 const cvUrl = "/assets/images/CV%20FEU%20alt.%202.pdf";
 
@@ -76,55 +78,6 @@ const processSteps = [
     title: "Bygga för vidareutveckling",
     description:
       "Jag tänker i återanvändbara delar, läsbar kod och animationer som går att utveckla vidare över tid.",
-  },
-];
-
-const projects = [
-  {
-    title: "HOW",
-    role: "UX/UI-koncept och informationsarkitektur",
-    description:
-      "Ett koncept för en lugnare lärplattform där ämnen, schema och vardagens viktigaste uppgifter blir lättare att hitta.",
-    tags: ["UX/UI", "Figma", "Designsystem"],
-    highlights: [
-      "Tydligare ämnesöversikt för elever",
-      "Lugn färgpalett och bättre visuell hierarki",
-      "Fokus på begriplighet i vardagliga flöden",
-    ],
-    image: "/assets/images/Howl-ux.png",
-    imageAlt: "HOW-plattform med ämneskort och sidomeny",
-    status: "Koncept",
-    ctaNote: "Case study byggs ut i nästa fas.",
-  },
-  {
-    title: "Lalles Vänner",
-    role: "Frontend, innehållsstruktur och visuell känsla",
-    description:
-      "En webbplats för ett jazzband där spelningar, galleri och kontakt behöver kännas både personliga och enkla att hitta.",
-    tags: ["HTML", "CSS", "Responsiv design"],
-    highlights: [
-      "Mer karaktär i uttrycket än en standardmall",
-      "Tydligare vägar till kontakt och bokning",
-      "Anpassad layout för att lyfta bandets identitet",
-    ],
-    image: "/assets/images/lalles-vanner.png",
-    imageAlt: "Startsida för Lalles Vänner med stark scenbild och orange informationskort",
-    status: "Kundprojekt",
-    ctaNote: "Processen bakom designvalen läggs till som nästa case study.",
-  },
-  {
-    title: "Portfolio V2",
-    role: "Next.js, motion och innehållsstrategi",
-    description:
-      "Min egen portfolio byggs om för att visa mer än bara design: den ska tydligt förklara hur jag tänker, bygger och förbättrar.",
-    tags: ["Next.js", "TypeScript", "Framer Motion"],
-    highlights: [
-      "Tydligare hero med personlig positionering",
-      "Projektsektion byggd för riktiga case studies",
-      "Grund lagd för bättre SEO och mer trovärdig storytelling",
-    ],
-    status: "Pågående",
-    ctaNote: "Fler projektsidor, sociala länkar och verifiering prioriteras härnäst.",
   },
 ];
 
@@ -386,8 +339,28 @@ export default function HomePage() {
 
             <div className="mt-14 grid gap-8 lg:grid-cols-3">
               {projects.map((project, index) => (
-                <ProjectCard key={project.title} {...project} delay={index * 0.1} />
+                <ProjectCard
+                  key={project.slug}
+                  {...project}
+                  projectUrl={`/projects/${project.slug}`}
+                  projectUrlLabel="Läs case study"
+                  delay={index * 0.1}
+                />
               ))}
+            </div>
+
+            <div className="mt-10 flex justify-center">
+              <Button
+                asChild
+                variant="outline"
+                size="lg"
+                className="border-primary/20 bg-white/70 text-foreground shadow-(--soft-shadow)"
+              >
+                <Link href="/projects">
+                  Alla case studies
+                  <ArrowRight className="h-5 w-5" />
+                </Link>
+              </Button>
             </div>
           </div>
         </section>
@@ -437,6 +410,8 @@ export default function HomePage() {
           </div>
         </section>
 
+        <PortfolioAssistant />
+
         <section id="contact" className="pb-24 pt-10">
           <div className="container px-6">
             <motion.div
@@ -455,9 +430,9 @@ export default function HomePage() {
                     Jag vill att portfoliot ska visa både personlighet och process.
                   </h2>
                   <p className="mt-5 max-w-2xl text-lg leading-relaxed text-muted-foreground">
-                    Fas 1 fokuserar på tydligare positionering, riktiga projekt och en
-                    mer professionell struktur. Härifrån kan sidan växa med djupare case
-                    studies, live-länkar och fler bevis på hur jag arbetar.
+                    Fas 2 ger projekten egna sidor så att du snabbt kan se både sammanfattning
+                    och djup. Härifrån kan sidan växa vidare med riktiga länkar, fler resultat
+                    och skarpare bevis på hur jag arbetar.
                   </p>
 
                   <div className="mt-8 flex flex-wrap gap-4">
@@ -466,10 +441,10 @@ export default function HomePage() {
                       size="lg"
                       className="shadow-(--glow-shadow) transition-transform duration-300 hover:scale-[1.02]"
                     >
-                      <a href={cvUrl} target="_blank" rel="noreferrer">
-                        <Download className="h-5 w-5" />
-                        Ladda ner CV
-                      </a>
+                      <Link href="/projects">
+                        Se alla case studies
+                        <ArrowRight className="h-5 w-5" />
+                      </Link>
                     </Button>
 
                     <Button
@@ -478,10 +453,10 @@ export default function HomePage() {
                       size="lg"
                       className="border-primary/20 bg-white/70 text-foreground shadow-(--soft-shadow)"
                     >
-                      <Link href="#projects">
-                        Gå till projekten
-                        <ArrowRight className="h-5 w-5" />
-                      </Link>
+                      <a href={cvUrl} target="_blank" rel="noreferrer">
+                        <Download className="h-5 w-5" />
+                        Ladda ner CV
+                      </a>
                     </Button>
                   </div>
                 </div>
@@ -491,9 +466,9 @@ export default function HomePage() {
                     Prioriterat härnäst
                   </p>
                   <div className="mt-4 space-y-4 text-sm leading-relaxed text-muted-foreground">
-                    <p>Färdigställa djupare case studies med process, resultat och lärdomar.</p>
-                    <p>Lägga till riktiga länkar till GitHub, LinkedIn och liveprojekt.</p>
-                    <p>Verifiera bygget med installerade beroenden och fortsätta förbättra SEO.</p>
+                    <p>Fylla varje case study med fler riktiga resultat, processbilder och beslut.</p>
+                    <p>Lägga till riktiga länkar till GitHub, LinkedIn, e-post och liveprojekt.</p>
+                    <p>Verifiera hela projektet med TypeScript och fortsätta förbättra SEO.</p>
                   </div>
                 </div>
               </div>
@@ -509,8 +484,8 @@ export default function HomePage() {
             <Link href="#about" className="transition-colors hover:text-foreground">
               Om mig
             </Link>
-            <Link href="#projects" className="transition-colors hover:text-foreground">
-              Projekt
+            <Link href="/projects" className="transition-colors hover:text-foreground">
+              Case studies
             </Link>
             <Link href="#contact" className="transition-colors hover:text-foreground">
               Nästa steg

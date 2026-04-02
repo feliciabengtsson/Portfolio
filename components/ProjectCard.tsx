@@ -1,4 +1,7 @@
+"use client";
+
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowUpRight, CheckCircle2, Github } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/Card";
@@ -11,6 +14,9 @@ interface ProjectCardProps {
   highlights: string[];
   image?: string;
   imageAlt?: string;
+  projectUrl?: string;
+  projectUrlLabel?: string;
+  projectUrlExternal?: boolean;
   liveUrl?: string;
   githubUrl?: string;
   status?: string;
@@ -26,6 +32,9 @@ export default function ProjectCard({
   highlights,
   image,
   imageAlt,
+  projectUrl,
+  projectUrlLabel = "Visa projekt",
+  projectUrlExternal = false,
   liveUrl,
   githubUrl,
   status,
@@ -99,7 +108,27 @@ export default function ProjectCard({
           </div>
 
           <div className="mt-auto flex flex-wrap items-center gap-4 pt-2 text-sm">
-            {liveUrl ? (
+            {projectUrl ? (
+              projectUrlExternal ? (
+                <a
+                  href={projectUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 font-semibold text-primary transition-colors hover:text-primary/80"
+                >
+                  {projectUrlLabel}
+                  <ArrowUpRight className="h-4 w-4" />
+                </a>
+              ) : (
+                <Link
+                  href={projectUrl}
+                  className="inline-flex items-center gap-2 font-semibold text-primary transition-colors hover:text-primary/80"
+                >
+                  {projectUrlLabel}
+                  <ArrowUpRight className="h-4 w-4" />
+                </Link>
+              )
+            ) : liveUrl ? (
               <a
                 href={liveUrl}
                 target="_blank"
