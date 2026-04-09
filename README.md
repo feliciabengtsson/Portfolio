@@ -1,3 +1,5 @@
+NOTE -- CURRENTLY UNDER DEVELOPMENT
+
 Portfolio using Next.js and React-three-fiber.
 
 After installing dependencies with 'npm install', the project is run by:
