@@ -1,4 +1,7 @@
-New and updated portfolio using Next.js and React-three-fiber.
+Portfolio using Next.js and React-three-fiber.
+
+After installing dependencies with 'npm install', the project is run by:
+'npm run dev'
 
 npm install three @types/three @react-three/fiber
 npm install @react-three/drei
