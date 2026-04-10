@@ -43,13 +43,15 @@ export default function PortfolioAssistant() {
         }),
       });
 
-      const data = (await response.json().catch(() => null)) as
-        | { answer?: string; error?: string }
-        | null;
+      const data = (await response.json().catch(() => null)) as {
+        answer?: string;
+        error?: string;
+      } | null;
 
       if (!response.ok) {
         setError(
-          data?.error || "Det gick inte att fa svar fran AI-assistenten just nu."
+          data?.error ||
+            "Det gick inte att fa svar fran AI-assistenten just nu.",
         );
         return;
       }
@@ -88,9 +90,9 @@ export default function PortfolioAssistant() {
                   Fraga AI om mig, projekten eller hur jag jobbar.
                 </h2>
                 <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
-                  Den har delen svarar utifran innehallet i portfolion och gor det
-                  latt att snabbt fa en sammanfattning av styrkor, case studies och
-                  arbetsprocess.
+                  Den har delen svarar utifran innehallet i portfolion och gor
+                  det latt att snabbt fa en sammanfattning av styrkor, case
+                  studies och arbetsprocess.
                 </p>
               </div>
 
@@ -101,7 +103,7 @@ export default function PortfolioAssistant() {
                     type="button"
                     onClick={() => void handleSuggestedQuestion(suggestion)}
                     disabled={isLoading}
-                    className="flex w-full items-center justify-between rounded-[24px] border border-border/70 bg-secondary/35 px-5 py-4 text-left text-sm font-medium text-foreground transition-colors hover:border-primary/25 hover:bg-white disabled:cursor-not-allowed disabled:opacity-70"
+                    className="flex w-full items-center justify-between rounded-3xl border border-border/70 bg-secondary/35 px-5 py-4 text-left text-sm font-medium text-foreground transition-colors hover:border-primary/25 hover:bg-white disabled:cursor-not-allowed disabled:opacity-70"
                   >
                     <span>{suggestion}</span>
                     <ArrowRight className="h-4 w-4 shrink-0 text-primary" />
@@ -114,13 +116,13 @@ export default function PortfolioAssistant() {
                   Bra att veta
                 </p>
                 <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                  Assistenten bygger bara pa innehall som redan finns i sajten och
-                  ar tankt som en snabb guide, inte som en generell chatbot.
+                  Assistenten bygger bara pa innehall som redan finns i sajten
+                  och ar tankt som en snabb guide, inte som en generell chatbot.
                 </p>
               </div>
             </div>
 
-            <div className="rounded-[32px] border border-white/60 bg-linear-to-br from-white via-white/90 to-secondary/45 p-6 shadow-(--soft-shadow)">
+            <div className="rounded-4xl border border-white/60 bg-linear-to-br from-white via-white/90 to-secondary/45 p-6 shadow-(--soft-shadow)">
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
                   <label
@@ -134,7 +136,7 @@ export default function PortfolioAssistant() {
                     value={question}
                     onChange={(event) => setQuestion(event.target.value)}
                     placeholder="Till exempel: Vilket projekt visar bast min formaga att kombinera UX och frontend?"
-                    className="mt-3 min-h-32 rounded-[24px] border-border/70 bg-white/85 px-4 py-4 text-base shadow-none"
+                    className="mt-3 min-h-32 rounded-3xl border-border/70 bg-white/85 px-4 py-4 text-base shadow-none"
                     disabled={isLoading}
                   />
                 </div>
@@ -177,8 +179,8 @@ export default function PortfolioAssistant() {
                   </p>
                 ) : (
                   <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-                    Stall en fraga eller tryck pa ett forslag sa visar assistenten ett
-                    snabbt svar baserat pa portfolion.
+                    Stall en fraga eller tryck pa ett forslag sa visar
+                    assistenten ett snabbt svar baserat pa portfolion.
                   </p>
                 )}
               </div>

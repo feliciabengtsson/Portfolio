@@ -5,7 +5,11 @@ import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowRight, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { Card, CardContent } from "@/components/ui/Card";
-import { getNextProject, getProjectBySlug, getProjectSlugs } from "@/lib/projects";
+import {
+  getNextProject,
+  getProjectBySlug,
+  getProjectSlugs,
+} from "@/lib/projects";
 
 type ProjectPageProps = {
   params: Promise<{
@@ -54,7 +58,10 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
     <div className="min-h-screen">
       <header className="border-b border-white/60 bg-background/85 backdrop-blur-xl">
         <div className="container flex flex-wrap items-center justify-between gap-4 px-6 py-4">
-          <Link href="/" className="text-sm font-semibold uppercase tracking-[0.22em] text-primary">
+          <Link
+            href="/"
+            className="text-sm font-semibold uppercase tracking-[0.22em] text-primary"
+          >
             Felicia Bengtsson
           </Link>
 
@@ -134,7 +141,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
             </div>
 
             <Card className="overflow-hidden border-white/60 bg-white/80 shadow-(--glow-shadow) backdrop-blur-sm">
-              <div className="relative aspect-[16/11] overflow-hidden bg-linear-to-br from-primary/15 via-secondary/30 to-accent/20">
+              <div className="relative aspect-16/11 overflow-hidden bg-linear-to-br from-primary/15 via-secondary/30 to-accent/20">
                 {project.image ? (
                   <Image
                     src={project.image}
@@ -154,7 +161,8 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
               <CardContent className="p-6">
                 <p className="text-sm leading-relaxed text-muted-foreground">
-                  {project.ctaNote ?? "Det här projektet fortsätter att utvecklas med fler insikter och detaljer."}
+                  {project.ctaNote ??
+                    "Det här projektet fortsätter att utvecklas med fler insikter och detaljer."}
                 </p>
               </CardContent>
             </Card>
@@ -172,7 +180,9 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                   <p className="text-xs font-semibold uppercase tracking-[0.22em] text-primary/80">
                     {metric.label}
                   </p>
-                  <p className="mt-3 text-2xl font-bold text-foreground">{metric.value}</p>
+                  <p className="mt-3 text-2xl font-bold text-foreground">
+                    {metric.value}
+                  </p>
                 </CardContent>
               </Card>
             ))}
@@ -188,7 +198,9 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                   className="border-white/60 bg-white/75 shadow-(--soft-shadow) backdrop-blur-sm"
                 >
                   <CardContent className="p-7">
-                    <h2 className="text-3xl font-bold text-foreground">{section.title}</h2>
+                    <h2 className="text-3xl font-bold text-foreground">
+                      {section.title}
+                    </h2>
                     <div className="mt-4 space-y-4 text-base leading-relaxed text-muted-foreground">
                       {section.paragraphs.map((paragraph) => (
                         <p key={paragraph}>{paragraph}</p>
@@ -207,7 +219,10 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                   </p>
                   <div className="mt-4 space-y-3">
                     {project.facts.map((fact) => (
-                      <div key={fact.label} className="rounded-[20px] border border-border/70 bg-white/75 p-4">
+                      <div
+                        key={fact.label}
+                        className="rounded-[20px] border border-border/70 bg-white/75 p-4"
+                      >
                         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary/80">
                           {fact.label}
                         </p>
@@ -274,7 +289,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                             {link.label}
                             <ArrowRight className="h-4 w-4" />
                           </Link>
-                        )
+                        ),
                       )}
                     </div>
                   </CardContent>
@@ -292,11 +307,14 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                   Vidare i portfoliot
                 </p>
                 <h2 className="mt-3 text-3xl font-bold text-foreground sm:text-4xl">
-                  {nextProject ? `Nästa case study: ${nextProject.title}` : "Se fler projekt"}
+                  {nextProject
+                    ? `Nästa case study: ${nextProject.title}`
+                    : "Se fler projekt"}
                 </h2>
                 <p className="mt-4 text-base leading-relaxed text-muted-foreground">
-                  Portfoliot blir starkare ju tydligare varje projekt visar tankeprocess,
-                  prioriteringar och resultat. Därför fortsätter jag bygga ut varje case study steg för steg.
+                  Portfoliot blir starkare ju tydligare varje projekt visar
+                  tankeprocess, prioriteringar och resultat. Därför fortsätter
+                  jag bygga ut varje case study steg för steg.
                 </p>
               </div>
 

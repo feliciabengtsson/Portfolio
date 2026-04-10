@@ -10,6 +10,14 @@ import { cn } from "@/lib/utils";
 
 const THEMES = { light: "", dark: ".dark" } as const;
 
+export type RechartsTooltipItem = {
+  value?: ValueType;
+  name?: NameType;
+  dataKey?: string;
+  color?: string;
+  payload?: Record<string, unknown>;
+};
+
 export type ChartConfig = {
   [k in string]: {
     label?: React.ReactNode;

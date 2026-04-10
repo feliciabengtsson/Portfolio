@@ -18,7 +18,7 @@ import { Button } from "@/components/ui/Button";
 import { Card, CardContent } from "@/components/ui/Card";
 import { projects } from "@/lib/projects";
 
-const cvUrl = "/assets/images/CV%20FEU%20alt.%202.pdf";
+const cvUrl = "/assets/images/CV_FEU.pdf";
 
 const strengths: Array<{
   title: string;
@@ -88,26 +88,45 @@ export default function HomePage() {
     <div className="min-h-screen">
       <header className="sticky top-0 z-50 border-b border-white/60 bg-background/80 backdrop-blur-xl">
         <div className="container flex items-center justify-between px-6 py-4">
-          <Link href="/" className="text-sm font-semibold uppercase tracking-[0.22em] text-primary">
+          <Link
+            href="/"
+            className="text-sm font-semibold uppercase tracking-[0.22em] text-primary"
+          >
             Felicia Bengtsson
           </Link>
 
           <nav className="hidden items-center gap-6 text-sm text-muted-foreground md:flex">
-            <Link href="#about" className="transition-colors hover:text-foreground">
+            <Link
+              href="#about"
+              className="transition-colors hover:text-foreground"
+            >
               Om mig
             </Link>
-            <Link href="#projects" className="transition-colors hover:text-foreground">
+            <Link
+              href="#projects"
+              className="transition-colors hover:text-foreground"
+            >
               Projekt
             </Link>
-            <Link href="#process" className="transition-colors hover:text-foreground">
+            <Link
+              href="#process"
+              className="transition-colors hover:text-foreground"
+            >
               Process
             </Link>
-            <Link href="#contact" className="transition-colors hover:text-foreground">
+            <Link
+              href="#contact"
+              className="transition-colors hover:text-foreground"
+            >
               Kontakt
             </Link>
           </nav>
 
-          <Button asChild size="sm" className="hidden shadow-(--soft-shadow) md:inline-flex">
+          <Button
+            asChild
+            size="sm"
+            className="hidden shadow-(--soft-shadow) md:inline-flex"
+          >
             <a href={cvUrl} target="_blank" rel="noreferrer">
               CV
             </a>
@@ -136,9 +155,10 @@ export default function HomePage() {
                 </h1>
 
                 <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted-foreground sm:text-xl">
-                  Portfolio för Felicia Bengtsson. Jag kombinerar frontendutveckling,
-                  UX-tänk och kreativ design för att skapa digitala produkter som känns
-                  genomarbetade från första klicket.
+                  Portfolio för Felicia Bengtsson. Jag kombinerar
+                  frontendutveckling, UX-tänk och kreativ design för att skapa
+                  digitala produkter som känns genomarbetade från första
+                  klicket.
                 </p>
 
                 <div className="mt-8 flex flex-wrap gap-4">
@@ -187,10 +207,10 @@ export default function HomePage() {
                   initial={{ opacity: 0, x: 24 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.7, delay: 0.15 }}
-                  className="overflow-hidden rounded-[32px] border border-white/60 bg-white/80 p-6 shadow-(--soft-shadow) backdrop-blur-sm"
+                  className="overflow-hidden rounded-4xl border border-white/60 bg-white/80 p-6 shadow-(--soft-shadow) backdrop-blur-sm"
                 >
                   <div className="grid gap-5 sm:grid-cols-[112px_1fr]">
-                    <div className="relative h-28 w-28 overflow-hidden rounded-[24px] border border-white/60 bg-secondary shadow-(--soft-shadow)">
+                    <div className="relative h-28 w-28 overflow-hidden rounded-3xl border border-white/60 bg-secondary shadow-(--soft-shadow)">
                       <Image
                         src="/assets/images/profile.jpg"
                         alt="Porträtt på Felicia Bengtsson"
@@ -208,9 +228,9 @@ export default function HomePage() {
                         Felicia Bengtsson
                       </h2>
                       <p className="mt-3 max-w-xl text-sm leading-relaxed text-muted-foreground">
-                        Frontendutvecklare med öga för UX, visuellt uttryck och tydlig
-                        kommunikation. Jag trivs bäst i projekt där form och funktion får
-                        stärka varandra.
+                        Frontendutvecklare med öga för UX, visuellt uttryck och
+                        tydlig kommunikation. Jag trivs bäst i projekt där form
+                        och funktion får stärka varandra.
                       </p>
                     </div>
                   </div>
@@ -219,7 +239,7 @@ export default function HomePage() {
                     {profileFacts.map((fact) => (
                       <div
                         key={fact.label}
-                        className="rounded-[24px] border border-border/70 bg-secondary/35 p-4"
+                        className="rounded-3xl border border-border/70 bg-secondary/35 p-4"
                       >
                         <p className="text-xs font-semibold uppercase tracking-[0.22em] text-primary/80">
                           {fact.label}
@@ -236,7 +256,7 @@ export default function HomePage() {
                   initial={{ opacity: 0, x: 24 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.7, delay: 0.25 }}
-                  className="overflow-hidden rounded-[32px] border border-white/60 bg-white/80 shadow-(--soft-shadow) backdrop-blur-sm"
+                  className="overflow-hidden rounded-4xl border border-white/60 bg-white/80 shadow-(--soft-shadow) backdrop-blur-sm"
                 >
                   <div className="flex flex-wrap items-start justify-between gap-4 px-6 pt-6">
                     <div className="max-w-md">
@@ -247,8 +267,9 @@ export default function HomePage() {
                         Motion och 3D med mening
                       </h3>
                       <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                        Jag vill att interaktioner ska ge energi och personlighet, men
-                        alltid stötta innehållet i stället för att distrahera från det.
+                        Jag vill att interaktioner ska ge energi och
+                        personlighet, men alltid stötta innehållet i stället för
+                        att distrahera från det.
                       </p>
                     </div>
 
@@ -257,7 +278,7 @@ export default function HomePage() {
                     </span>
                   </div>
 
-                  <div className="h-[280px] sm:h-[320px]">
+                  <div className="h-[280px] sm:h-80">
                     <Hero3D />
                   </div>
                 </motion.div>
@@ -279,12 +300,13 @@ export default function HomePage() {
                 Vad jag tar med till ett team
               </p>
               <h2 className="mt-3 text-4xl font-bold text-foreground sm:text-5xl">
-                Jag vill bygga digitala upplevelser som känns genomarbetade, inte generiska.
+                Jag vill bygga digitala upplevelser som känns genomarbetade,
+                inte generiska.
               </h2>
               <p className="mt-5 text-lg leading-relaxed text-muted-foreground">
-                För mig handlar bra frontend inte bara om att få saker att fungera. Det
-                handlar om att skapa tydlighet, förtroende och en känsla av att varje
-                detalj är där av en anledning.
+                För mig handlar bra frontend inte bara om att få saker att
+                fungera. Det handlar om att skapa tydlighet, förtroende och en
+                känsla av att varje detalj är där av en anledning.
               </p>
             </motion.div>
 
@@ -332,8 +354,8 @@ export default function HomePage() {
                 Projekt som visar hur jag kombinerar innehåll, UX och frontend.
               </h2>
               <p className="mt-5 text-lg leading-relaxed text-muted-foreground">
-                Här lyfter jag fram arbeten som visar både visuell känsla och hur jag
-                strukturerar upplevelser för riktiga användarbehov.
+                Här lyfter jag fram arbeten som visar både visuell känsla och
+                hur jag strukturerar upplevelser för riktiga användarbehov.
               </p>
             </motion.div>
 
@@ -427,12 +449,14 @@ export default function HomePage() {
                     Nästa steg
                   </p>
                   <h2 className="mt-3 text-4xl font-bold text-foreground sm:text-5xl">
-                    Jag vill att portfoliot ska visa både personlighet och process.
+                    Jag vill att portfoliot ska visa både personlighet och
+                    process.
                   </h2>
                   <p className="mt-5 max-w-2xl text-lg leading-relaxed text-muted-foreground">
-                    Fas 2 ger projekten egna sidor så att du snabbt kan se både sammanfattning
-                    och djup. Härifrån kan sidan växa vidare med riktiga länkar, fler resultat
-                    och skarpare bevis på hur jag arbetar.
+                    Fas 2 ger projekten egna sidor så att du snabbt kan se både
+                    sammanfattning och djup. Härifrån kan sidan växa vidare med
+                    riktiga länkar, fler resultat och skarpare bevis på hur jag
+                    arbetar.
                   </p>
 
                   <div className="mt-8 flex flex-wrap gap-4">
@@ -466,9 +490,18 @@ export default function HomePage() {
                     Prioriterat härnäst
                   </p>
                   <div className="mt-4 space-y-4 text-sm leading-relaxed text-muted-foreground">
-                    <p>Fylla varje case study med fler riktiga resultat, processbilder och beslut.</p>
-                    <p>Lägga till riktiga länkar till GitHub, LinkedIn, e-post och liveprojekt.</p>
-                    <p>Verifiera hela projektet med TypeScript och fortsätta förbättra SEO.</p>
+                    <p>
+                      Fylla varje case study med fler riktiga resultat,
+                      processbilder och beslut.
+                    </p>
+                    <p>
+                      Lägga till riktiga länkar till GitHub, LinkedIn, e-post
+                      och liveprojekt.
+                    </p>
+                    <p>
+                      Verifiera hela projektet med TypeScript och fortsätta
+                      förbättra SEO.
+                    </p>
                   </div>
                 </div>
               </div>
@@ -479,15 +512,27 @@ export default function HomePage() {
 
       <footer className="border-t border-border/70 py-8">
         <div className="container flex flex-col gap-3 px-6 text-sm text-muted-foreground md:flex-row md:items-center md:justify-between">
-          <p>{year} Felicia Bengtsson. Portfolio byggd i Next.js, TypeScript och Framer Motion.</p>
+          <p>
+            {year} Felicia Bengtsson. Portfolio byggd i Next.js, TypeScript och
+            Framer Motion.
+          </p>
           <div className="flex flex-wrap gap-4">
-            <Link href="#about" className="transition-colors hover:text-foreground">
+            <Link
+              href="#about"
+              className="transition-colors hover:text-foreground"
+            >
               Om mig
             </Link>
-            <Link href="/projects" className="transition-colors hover:text-foreground">
+            <Link
+              href="/projects"
+              className="transition-colors hover:text-foreground"
+            >
               Case studies
             </Link>
-            <Link href="#contact" className="transition-colors hover:text-foreground">
+            <Link
+              href="#contact"
+              className="transition-colors hover:text-foreground"
+            >
               Nästa steg
             </Link>
           </div>

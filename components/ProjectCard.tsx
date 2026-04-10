@@ -51,7 +51,7 @@ export default function ProjectCard({
       className="h-full"
     >
       <Card className="group flex h-full flex-col overflow-hidden border border-white/60 bg-white/80 shadow-(--soft-shadow) backdrop-blur-sm transition-all duration-300 hover:border-primary/30 hover:shadow-(--glow-shadow)">
-        <div className="relative aspect-[16/10] overflow-hidden border-b border-border/70 bg-linear-to-br from-primary/20 via-secondary/30 to-accent/25">
+        <div className="relative aspect-16/10 overflow-hidden border-b border-border/70 bg-linear-to-br from-primary/20 via-secondary/30 to-accent/25">
           {image ? (
             <Image
               src={image}
@@ -62,7 +62,9 @@ export default function ProjectCard({
             />
           ) : (
             <div className="flex h-full items-center justify-center bg-linear-to-br from-primary/10 via-white to-accent/10">
-              <span className="text-6xl font-bold text-primary/25">{title.charAt(0)}</span>
+              <span className="text-6xl font-bold text-primary/25">
+                {title.charAt(0)}
+              </span>
             </div>
           )}
 
@@ -83,7 +85,9 @@ export default function ProjectCard({
 
             <div className="space-y-2">
               <h3 className="text-2xl font-bold text-foreground">{title}</h3>
-              <p className="leading-relaxed text-muted-foreground">{description}</p>
+              <p className="leading-relaxed text-muted-foreground">
+                {description}
+              </p>
             </div>
           </div>
 
@@ -100,7 +104,10 @@ export default function ProjectCard({
 
           <div className="space-y-2">
             {highlights.map((highlight) => (
-              <div key={highlight} className="flex items-start gap-2 text-sm text-muted-foreground">
+              <div
+                key={highlight}
+                className="flex items-start gap-2 text-sm text-muted-foreground"
+              >
                 <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
                 <span>{highlight}</span>
               </div>
@@ -152,7 +159,9 @@ export default function ProjectCard({
               </a>
             ) : null}
 
-            {ctaNote ? <p className="text-sm text-muted-foreground">{ctaNote}</p> : null}
+            {ctaNote ? (
+              <p className="text-sm text-muted-foreground">{ctaNote}</p>
+            ) : null}
           </div>
         </CardContent>
       </Card>
