@@ -30,12 +30,14 @@
 }
 
 html {
+  overflow-x: hidden;
   scroll-behavior: smooth;
 }
 
 body {
   margin: 0;
   min-height: 100vh;
+  overflow-x: hidden;
   color: hsl(var(--foreground));
   background:
     radial-gradient(circle at top left, rgba(255, 244, 232, 0.95), transparent 36%),

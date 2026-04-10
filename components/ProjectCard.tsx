@@ -77,14 +77,16 @@ export default function ProjectCard({
           )}
         </div>
 
-        <CardContent className="flex h-full flex-col gap-5 p-6">
+        <CardContent className="flex h-full flex-col gap-5 p-5 sm:p-6">
           <div className="space-y-3">
             <p className="text-xs font-semibold uppercase tracking-[0.24em] text-primary/80">
               {role}
             </p>
 
             <div className="space-y-2">
-              <h3 className="text-2xl font-bold text-foreground">{title}</h3>
+              <h3 className="text-xl font-bold text-foreground sm:text-2xl">
+                {title}
+              </h3>
               <p className="leading-relaxed text-muted-foreground">
                 {description}
               </p>
@@ -114,7 +116,7 @@ export default function ProjectCard({
             ))}
           </div>
 
-          <div className="mt-auto flex flex-wrap items-center gap-4 pt-2 text-sm">
+          <div className="mt-auto flex flex-col items-start gap-3 pt-2 text-sm sm:flex-row sm:flex-wrap sm:items-center sm:gap-4">
             {projectUrl ? (
               projectUrlExternal ? (
                 <a

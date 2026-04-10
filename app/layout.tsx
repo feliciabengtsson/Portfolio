@@ -25,7 +25,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="sv">
-      <body className={`${displayFont.variable} ${bodyFont.variable} antialiased`}>
+      <body
+        className={`${displayFont.variable} ${bodyFont.variable} overflow-x-hidden antialiased`}
+      >
         {children}
       </body>
     </html>

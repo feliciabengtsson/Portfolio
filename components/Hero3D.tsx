@@ -20,7 +20,7 @@ function AnimatedSphere() {
 
 export default function Hero3D() {
   return (
-    <div className="h-full w-full" aria-hidden="true">
+    <div className="h-full min-h-[220px] w-full sm:min-h-[280px]" aria-hidden="true">
       <Canvas camera={{ position: [0, 0, 5], fov: 45 }} dpr={[1, 1.5]}>
         <ambientLight intensity={0.65} />
         <directionalLight position={[10, 10, 5]} intensity={1.1} />

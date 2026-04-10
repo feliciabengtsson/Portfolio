@@ -57,7 +57,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
   return (
     <div className="min-h-screen">
       <header className="border-b border-white/60 bg-background/85 backdrop-blur-xl">
-        <div className="container flex flex-wrap items-center justify-between gap-4 px-6 py-4">
+        <div className="container flex flex-col gap-3 px-4 py-3 sm:px-6 sm:py-4 md:flex-row md:items-center md:justify-between">
           <Link
             href="/"
             className="text-sm font-semibold uppercase tracking-[0.22em] text-primary"
@@ -81,8 +81,8 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
         </div>
       </header>
 
-      <main className="pb-24 pt-16">
-        <section className="container px-6">
+      <main className="pb-20 pt-12 sm:pb-24 sm:pt-16">
+        <section className="container px-4 sm:px-6">
           <Link
             href="/projects"
             className="inline-flex items-center gap-2 text-sm font-semibold text-primary transition-colors hover:text-primary/80"
@@ -91,14 +91,14 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
             Tillbaka till case studies
           </Link>
 
-          <div className="mt-8 grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-start">
+          <div className="mt-8 grid gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-start lg:gap-10">
             <div className="max-w-3xl">
               <p className="text-sm font-semibold uppercase tracking-[0.24em] text-primary/80">
                 {project.eyebrow}
               </p>
 
               <div className="mt-4 flex flex-wrap items-center gap-3">
-                <h1 className="text-5xl font-bold text-foreground sm:text-6xl">
+                <h1 className="text-4xl font-bold text-foreground sm:text-5xl lg:text-6xl">
                   {project.title}
                 </h1>
                 <span className="rounded-full border border-primary/15 bg-white/80 px-4 py-2 text-xs font-semibold uppercase tracking-[0.22em] text-primary shadow-(--soft-shadow)">
@@ -106,7 +106,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                 </span>
               </div>
 
-              <p className="mt-6 text-xl leading-relaxed text-muted-foreground">
+              <p className="mt-5 text-lg leading-relaxed text-muted-foreground sm:mt-6 sm:text-xl">
                 {project.description}
               </p>
 
@@ -121,7 +121,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                 ))}
               </div>
 
-              <div className="mt-10 grid gap-4 sm:grid-cols-3">
+              <div className="mt-8 grid gap-4 sm:mt-10 sm:grid-cols-3">
                 {overviewFacts.map((fact) => (
                   <Card
                     key={fact.label}
@@ -159,24 +159,24 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                 )}
               </div>
 
-              <CardContent className="p-6">
+              <CardContent className="p-5 sm:p-6">
                 <p className="text-sm leading-relaxed text-muted-foreground">
                   {project.ctaNote ??
-                    "Det här projektet fortsätter att utvecklas med fler insikter och detaljer."}
+                    "Det hÃ¤r projektet fortsÃ¤tter att utvecklas med fler insikter och detaljer."}
                 </p>
               </CardContent>
             </Card>
           </div>
         </section>
 
-        <section className="container px-6 pt-16">
-          <div className="grid gap-6 md:grid-cols-3">
+        <section className="container px-4 pt-12 sm:px-6 sm:pt-16">
+          <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
             {project.metrics.map((metric) => (
               <Card
                 key={metric.label}
                 className="border-white/60 bg-white/75 shadow-(--soft-shadow) backdrop-blur-sm"
               >
-                <CardContent className="p-6">
+                <CardContent className="p-5 sm:p-6">
                   <p className="text-xs font-semibold uppercase tracking-[0.22em] text-primary/80">
                     {metric.label}
                   </p>
@@ -189,16 +189,16 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
           </div>
         </section>
 
-        <section className="container px-6 pt-16">
-          <div className="grid gap-8 lg:grid-cols-[1.05fr_0.95fr]">
+        <section className="container px-4 pt-12 sm:px-6 sm:pt-16">
+          <div className="grid gap-8 xl:grid-cols-[1.05fr_0.95fr]">
             <div className="space-y-6">
               {project.sections.map((section) => (
                 <Card
                   key={section.title}
                   className="border-white/60 bg-white/75 shadow-(--soft-shadow) backdrop-blur-sm"
                 >
-                  <CardContent className="p-7">
-                    <h2 className="text-3xl font-bold text-foreground">
+                  <CardContent className="p-5 sm:p-7">
+                    <h2 className="text-2xl font-bold text-foreground sm:text-3xl">
                       {section.title}
                     </h2>
                     <div className="mt-4 space-y-4 text-base leading-relaxed text-muted-foreground">
@@ -213,7 +213,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
             <div className="space-y-6">
               <Card className="border-white/60 bg-white/80 shadow-(--soft-shadow) backdrop-blur-sm">
-                <CardContent className="p-6">
+                <CardContent className="p-5 sm:p-6">
                   <p className="text-xs font-semibold uppercase tracking-[0.24em] text-primary/80">
                     I projektet
                   </p>
@@ -236,7 +236,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
               </Card>
 
               <Card className="border-white/60 bg-white/80 shadow-(--soft-shadow) backdrop-blur-sm">
-                <CardContent className="p-6">
+                <CardContent className="p-5 sm:p-6">
                   <p className="text-xs font-semibold uppercase tracking-[0.24em] text-primary/80">
                     Leveranser
                   </p>
@@ -249,7 +249,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
               </Card>
 
               <Card className="border-white/60 bg-white/80 shadow-(--soft-shadow) backdrop-blur-sm">
-                <CardContent className="p-6">
+                <CardContent className="p-5 sm:p-6">
                   <p className="text-xs font-semibold uppercase tracking-[0.24em] text-primary/80">
                     Fortsatt utveckling
                   </p>
@@ -263,9 +263,9 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
               {project.links?.length ? (
                 <Card className="border-white/60 bg-white/80 shadow-(--soft-shadow) backdrop-blur-sm">
-                  <CardContent className="p-6">
+                  <CardContent className="p-5 sm:p-6">
                     <p className="text-xs font-semibold uppercase tracking-[0.24em] text-primary/80">
-                      Länkar
+                      LÃ¤nkar
                     </p>
                     <div className="mt-4 flex flex-wrap gap-3">
                       {project.links.map((link) =>
@@ -299,30 +299,34 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
           </div>
         </section>
 
-        <section className="container px-6 pt-16">
+        <section className="container px-4 pt-12 sm:px-6 sm:pt-16">
           <Card className="border-white/60 bg-linear-to-br from-white/85 via-white/80 to-secondary/55 shadow-(--glow-shadow) backdrop-blur-sm">
-            <CardContent className="flex flex-col gap-6 p-8 lg:flex-row lg:items-end lg:justify-between">
+            <CardContent className="flex flex-col gap-6 p-5 sm:p-8 lg:flex-row lg:items-end lg:justify-between">
               <div className="max-w-2xl">
                 <p className="text-sm font-semibold uppercase tracking-[0.24em] text-primary/80">
                   Vidare i portfoliot
                 </p>
-                <h2 className="mt-3 text-3xl font-bold text-foreground sm:text-4xl">
+                <h2 className="mt-3 text-2xl font-bold text-foreground sm:text-3xl lg:text-4xl">
                   {nextProject
-                    ? `Nästa case study: ${nextProject.title}`
+                    ? `NÃ¤sta case study: ${nextProject.title}`
                     : "Se fler projekt"}
                 </h2>
                 <p className="mt-4 text-base leading-relaxed text-muted-foreground">
                   Portfoliot blir starkare ju tydligare varje projekt visar
-                  tankeprocess, prioriteringar och resultat. Därför fortsätter
-                  jag bygga ut varje case study steg för steg.
+                  tankeprocess, prioriteringar och resultat. DÃ¤rfÃ¶r fortsÃ¤tter
+                  jag bygga ut varje case study steg fÃ¶r steg.
                 </p>
               </div>
 
-              <div className="flex flex-wrap gap-4">
+              <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
                 {nextProject ? (
-                  <Button asChild size="lg" className="shadow-(--glow-shadow)">
+                  <Button
+                    asChild
+                    size="lg"
+                    className="w-full justify-center shadow-(--glow-shadow) sm:w-auto"
+                  >
                     <Link href={`/projects/${nextProject.slug}`}>
-                      Nästa projekt
+                      NÃ¤sta projekt
                       <ArrowRight className="h-5 w-5" />
                     </Link>
                   </Button>
@@ -332,7 +336,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                   asChild
                   variant="outline"
                   size="lg"
-                  className="border-primary/20 bg-white/70 text-foreground shadow-(--soft-shadow)"
+                  className="w-full justify-center border-primary/20 bg-white/70 text-foreground shadow-(--soft-shadow) sm:w-auto"
                 >
                   <Link href="/projects">
                     Alla case studies

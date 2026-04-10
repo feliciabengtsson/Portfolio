@@ -75,10 +75,10 @@ export default function PortfolioAssistant() {
   }
 
   return (
-    <section id="ai" className="py-24">
-      <div className="container px-6">
+    <section id="ai" className="py-20 sm:py-24">
+      <div className="container px-4 sm:px-6">
         <Card className="overflow-hidden border-white/60 bg-white/80 shadow-(--glow-shadow) backdrop-blur-sm">
-          <CardContent className="grid gap-8 p-8 lg:grid-cols-[0.95fr_1.05fr] lg:p-10">
+          <CardContent className="grid gap-8 p-5 sm:p-8 lg:grid-cols-[0.95fr_1.05fr] lg:p-10">
             <div className="space-y-6">
               <div className="inline-flex items-center gap-2 rounded-full border border-primary/15 bg-secondary/60 px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-primary shadow-(--soft-shadow)">
                 <Sparkles className="h-4 w-4" />
@@ -86,10 +86,10 @@ export default function PortfolioAssistant() {
               </div>
 
               <div className="max-w-xl">
-                <h2 className="text-4xl font-bold text-foreground sm:text-5xl">
+                <h2 className="text-3xl font-bold text-foreground sm:text-4xl lg:text-5xl">
                   Fraga AI om mig, projekten eller hur jag jobbar.
                 </h2>
-                <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
+                <p className="mt-4 text-base leading-relaxed text-muted-foreground sm:text-lg">
                   Den har delen svarar utifran innehallet i portfolion och gor
                   det latt att snabbt fa en sammanfattning av styrkor, case
                   studies och arbetsprocess.
@@ -103,7 +103,7 @@ export default function PortfolioAssistant() {
                     type="button"
                     onClick={() => void handleSuggestedQuestion(suggestion)}
                     disabled={isLoading}
-                    className="flex w-full items-center justify-between rounded-3xl border border-border/70 bg-secondary/35 px-5 py-4 text-left text-sm font-medium text-foreground transition-colors hover:border-primary/25 hover:bg-white disabled:cursor-not-allowed disabled:opacity-70"
+                    className="flex w-full items-start justify-between gap-3 rounded-3xl border border-border/70 bg-secondary/35 px-4 py-4 text-left text-sm font-medium text-foreground transition-colors hover:border-primary/25 hover:bg-white disabled:cursor-not-allowed disabled:opacity-70 sm:items-center sm:px-5"
                   >
                     <span>{suggestion}</span>
                     <ArrowRight className="h-4 w-4 shrink-0 text-primary" />
@@ -122,7 +122,7 @@ export default function PortfolioAssistant() {
               </div>
             </div>
 
-            <div className="rounded-4xl border border-white/60 bg-linear-to-br from-white via-white/90 to-secondary/45 p-6 shadow-(--soft-shadow)">
+            <div className="rounded-4xl border border-white/60 bg-linear-to-br from-white via-white/90 to-secondary/45 p-5 shadow-(--soft-shadow) sm:p-6">
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
                   <label
@@ -149,7 +149,7 @@ export default function PortfolioAssistant() {
                   <Button
                     type="submit"
                     size="lg"
-                    className="shadow-(--glow-shadow)"
+                    className="w-full shadow-(--glow-shadow) sm:w-auto"
                     disabled={isLoading}
                   >
                     {isLoading ? "Tanker..." : "Fraga assistenten"}
@@ -158,7 +158,7 @@ export default function PortfolioAssistant() {
                 </div>
               </form>
 
-              <div className="mt-6 rounded-[28px] border border-border/70 bg-white/80 p-5">
+              <div className="mt-6 rounded-[28px] border border-border/70 bg-white/80 p-4 sm:p-5">
                 <p className="text-xs font-semibold uppercase tracking-[0.22em] text-primary/80">
                   Svar
                 </p>
