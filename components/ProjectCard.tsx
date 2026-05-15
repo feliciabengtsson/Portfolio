@@ -5,11 +5,13 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowUpRight, CheckCircle2, Github } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/Card";
+import { siteContent } from "@/lib/content";
 
 interface ProjectCardProps {
   title: string;
   description: string;
   role: string;
+  timeframe?: string;
   tags: string[];
   highlights: string[];
   image?: string;
@@ -28,12 +30,13 @@ export default function ProjectCard({
   title,
   description,
   role,
+  timeframe,
   tags,
   highlights,
   image,
   imageAlt,
   projectUrl,
-  projectUrlLabel = "Visa projekt",
+  projectUrlLabel = siteContent.buttons.viewProject,
   projectUrlExternal = false,
   liveUrl,
   githubUrl,
@@ -51,7 +54,7 @@ export default function ProjectCard({
       className="h-full"
     >
       <Card className="group flex h-full flex-col overflow-hidden border border-white/60 bg-white/80 shadow-(--soft-shadow) backdrop-blur-sm transition-all duration-300 hover:border-primary/30 hover:shadow-(--glow-shadow)">
-        <div className="relative aspect-16/10 overflow-hidden border-b border-border/70 bg-linear-to-br from-primary/20 via-secondary/30 to-accent/25">
+        <div className="relative aspect-16/10 min-h-56 overflow-hidden border-b border-border/70 bg-linear-to-br from-primary/20 via-secondary/30 to-accent/25">
           {image ? (
             <Image
               src={image}
@@ -70,16 +73,23 @@ export default function ProjectCard({
 
           <div className="absolute inset-0 bg-linear-to-t from-black/35 via-transparent to-transparent" />
 
-          {status && (
-            <span className="absolute left-4 top-4 rounded-full border border-white/50 bg-black/55 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-white backdrop-blur-sm">
-              {status}
-            </span>
-          )}
+          <div className="absolute left-4 top-4 flex flex-wrap gap-2">
+            {status ? (
+              <span className="rounded-full border border-white/50 bg-black/55 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-white backdrop-blur-sm">
+                {status}
+              </span>
+            ) : null}
+            {timeframe ? (
+              <span className="rounded-full border border-white/50 bg-white/85 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-primary backdrop-blur-sm">
+                {timeframe}
+              </span>
+            ) : null}
+          </div>
         </div>
 
         <CardContent className="flex h-full flex-col gap-5 p-5 sm:p-6">
           <div className="space-y-3">
-            <p className="text-xs font-semibold uppercase tracking-[0.24em] text-primary/80">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary/80">
               {role}
             </p>
 
@@ -123,7 +133,7 @@ export default function ProjectCard({
                   href={projectUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 font-semibold text-primary transition-colors hover:text-primary/80"
+                  className="inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2 font-semibold text-primary-foreground shadow-(--soft-shadow) transition-all hover:bg-primary/90"
                 >
                   {projectUrlLabel}
                   <ArrowUpRight className="h-4 w-4" />
@@ -131,7 +141,7 @@ export default function ProjectCard({
               ) : (
                 <Link
                   href={projectUrl}
-                  className="inline-flex items-center gap-2 font-semibold text-primary transition-colors hover:text-primary/80"
+                  className="inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2 font-semibold text-primary-foreground shadow-(--soft-shadow) transition-all hover:bg-primary/90"
                 >
                   {projectUrlLabel}
                   <ArrowUpRight className="h-4 w-4" />
@@ -142,9 +152,9 @@ export default function ProjectCard({
                 href={liveUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 font-semibold text-primary transition-colors hover:text-primary/80"
+                className="inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2 font-semibold text-primary-foreground shadow-(--soft-shadow) transition-all hover:bg-primary/90"
               >
-                Visa projekt
+                {siteContent.buttons.viewProject}
                 <ArrowUpRight className="h-4 w-4" />
               </a>
             ) : null}
@@ -156,7 +166,7 @@ export default function ProjectCard({
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 font-semibold text-primary transition-colors hover:text-primary/80"
               >
-                Kod
+                {siteContent.buttons.code}
                 <Github className="h-4 w-4" />
               </a>
             ) : null}

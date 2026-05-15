@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { DM_Sans, Syne } from "next/font/google";
+import { siteContent } from "@/lib/content";
 import "./globals.css";
 
 const displayFont = Syne({
@@ -13,9 +14,8 @@ const bodyFont = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Felicia Bengtsson | Frontendutvecklare",
-  description:
-    "Portfolio med utvalda projekt inom frontend, UX/UI och visuellt starka webbupplevelser.",
+  title: siteContent.title,
+  description: siteContent.description,
 };
 
 export default function RootLayout({

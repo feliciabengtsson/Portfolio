@@ -3,15 +3,16 @@ import Link from "next/link";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import ProjectCard from "@/components/ProjectCard";
 import { Button } from "@/components/ui/Button";
-import { projects } from "@/lib/projects";
+import { projects, siteContent } from "@/lib/content";
 
 export const metadata: Metadata = {
-  title: "Case Studies | Felicia Bengtsson",
-  description:
-    "Utvalda projekt och case studies inom frontend, UX/UI och digital design.",
+  title: siteContent.metadata.projectsTitle,
+  description: siteContent.metadata.projectsDescription,
 };
 
 export default function ProjectsPage() {
+  const { buttons, name, navigation, projectsPage } = siteContent;
+
   return (
     <div className="min-h-screen">
       <header className="border-b border-white/60 bg-background/85 backdrop-blur-xl">
@@ -20,7 +21,7 @@ export default function ProjectsPage() {
             href="/"
             className="text-sm font-semibold uppercase tracking-[0.22em] text-primary"
           >
-            Felicia Bengtsson
+            {name}
           </Link>
 
           <div className="flex flex-wrap items-center gap-3">
@@ -32,7 +33,7 @@ export default function ProjectsPage() {
             >
               <Link href="/">
                 <ArrowLeft className="h-4 w-4" />
-                Till startsidan
+                {navigation.home}
               </Link>
             </Button>
           </div>
@@ -43,27 +44,24 @@ export default function ProjectsPage() {
         <section className="container px-4 sm:px-6">
           <div className="max-w-3xl">
             <p className="text-sm font-semibold uppercase tracking-[0.24em] text-primary/80">
-              Alla case studies
+              {projectsPage.eyebrow}
             </p>
             <h1 className="mt-3 text-4xl font-bold text-foreground sm:text-5xl lg:text-6xl">
-              Projekt som visar hur jag jobbar med struktur, kÃ¤nsla och
-              frontend.
+              {projectsPage.title}
             </h1>
             <p className="mt-5 text-base leading-relaxed text-muted-foreground sm:text-lg">
-              HÃ¤r finns en samlad Ã¶versikt Ã¶ver projekt som jag anvÃ¤nder fÃ¶r
-              att visa min process, mina prioriteringar och hur jag omsÃ¤tter
-              idÃ©er till anvÃ¤ndbara upplevelser.
+              {projectsPage.body}
             </p>
           </div>
 
-          <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-3 xl:gap-8">
+          <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 xl:gap-8">
             {projects.map((project, index) => (
               <ProjectCard
                 key={project.slug}
                 {...project}
                 projectUrl={`/projects/${project.slug}`}
-                projectUrlLabel="LÃ¤s case study"
-                delay={index * 0.08}
+                projectUrlLabel={buttons.readCaseStudy}
+                delay={Math.min(index * 0.06, 0.24)}
               />
             ))}
           </div>
@@ -76,7 +74,7 @@ export default function ProjectsPage() {
             >
               <Link href="/">
                 <ArrowLeft className="h-5 w-5" />
-                Tillbaka till portfoliot
+                {navigation.backToPortfolio}
               </Link>
             </Button>
 
@@ -87,7 +85,7 @@ export default function ProjectsPage() {
               className="w-full justify-center border-primary/20 bg-white/70 text-foreground shadow-(--soft-shadow) sm:w-auto"
             >
               <Link href="/#contact">
-                NÃ¤sta steg
+                {navigation.nextStep}
                 <ArrowRight className="h-5 w-5" />
               </Link>
             </Button>

@@ -153,7 +153,11 @@ const ChartTooltipContent = React.forwardRef<
           : itemConfig?.label;
 
       if (labelFormatter) {
-        return <div className={cn("font-medium")}>{labelFormatter(value, payload)}</div>;
+        return (
+          <div className={cn("font-medium")}>
+            {labelFormatter(value, payload)}
+          </div>
+        );
       }
 
       if (!value) {
@@ -192,8 +196,12 @@ const ChartTooltipContent = React.forwardRef<
               index,
               payload,
             );
-            const formattedValue = Array.isArray(formatted) ? formatted[0] : formatted;
-            const formattedName = Array.isArray(formatted) ? formatted[1] : undefined;
+            const formattedValue = Array.isArray(formatted)
+              ? formatted[0]
+              : formatted;
+            const formattedName = Array.isArray(formatted)
+              ? formatted[1]
+              : undefined;
 
             return (
               <div
@@ -329,7 +337,9 @@ function getPayloadConfigFromPayload(
   let configLabelKey: string = key;
 
   const valueFromPayload = getString(payloadRecord[key]);
-  const valueFromNestedPayload = payloadPayload ? getString(payloadPayload[key]) : undefined;
+  const valueFromNestedPayload = payloadPayload
+    ? getString(payloadPayload[key])
+    : undefined;
 
   if (valueFromPayload) {
     configLabelKey = valueFromPayload;
@@ -337,9 +347,7 @@ function getPayloadConfigFromPayload(
     configLabelKey = valueFromNestedPayload;
   }
 
-  return configLabelKey in config
-    ? config[configLabelKey]
-    : config[key];
+  return configLabelKey in config ? config[configLabelKey] : config[key];
 }
 
 function getRecord(value: unknown): Record<string, unknown> | undefined {

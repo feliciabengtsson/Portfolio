@@ -1,0 +1,594 @@
+{
+  "site": {
+    "name": "Felicia Bengtsson",
+    "title": "Felicia Bengtsson | Frontendutvecklare",
+    "description": "Portfolio med utvalda projekt inom frontend, UX/UI och visuellt starka webbupplevelser.",
+    "cvUrl": "/assets/images/CV_FEU.pdf",
+    "metadata": {
+      "projectsTitle": "Case Studies | Felicia Bengtsson",
+      "projectsDescription": "Utvalda projekt och case studies inom frontend, UX/UI och digital design.",
+      "notFoundProjectTitle": "Projekt hittades inte | Felicia Bengtsson"
+    },
+    "navigation": {
+      "home": "Till startsidan",
+      "about": "Om mig",
+      "projects": "Projekt",
+      "process": "Process",
+      "contact": "Kontakt",
+      "caseStudies": "Case studies",
+      "nextStep": "Nästa steg",
+      "allProjects": "Alla projekt",
+      "backToCaseStudies": "Tillbaka till case studies",
+      "backToPortfolio": "Tillbaka till portfoliot"
+    },
+    "buttons": {
+      "cvShort": "CV",
+      "downloadCv": "Ladda ner CV",
+      "selectedProjects": "Se utvalda projekt",
+      "allCaseStudies": "Alla case studies",
+      "readCaseStudy": "Läs case study",
+      "nextProject": "Nästa projekt",
+      "viewProject": "Visa projekt",
+      "code": "Kod"
+    },
+    "home": {
+      "hero": {
+        "eyebrow": "Frontendutvecklare med UX-fokus",
+        "title": "Jag bygger varma, tydliga och visuellt starka webbupplevelser.",
+        "body": "Portfolio för Felicia Bengtsson. Jag kombinerar frontendutveckling, UX-tänk och kreativ design för att skapa digitala produkter som känns genomarbetade från första klicket.",
+        "tags": [
+          "React & Next.js",
+          "UX/UI med struktur",
+          "Motion och creative frontend"
+        ]
+      },
+      "profile": {
+        "location": "Bas i Sverige",
+        "imageAlt": "Porträtt på Felicia Bengtsson",
+        "body": "Frontendutvecklare med öga för UX, visuellt uttryck och tydlig kommunikation. Jag trivs bäst i projekt där form och funktion får stärka varandra.",
+        "facts": [
+          { "label": "Fokus", "value": "React, Next.js och TypeScript" },
+          {
+            "label": "Styrka",
+            "value": "UX/UI, komponenttänk och tydlig struktur"
+          },
+          {
+            "label": "Nästa steg",
+            "value": "Djupare case studies och fler liveprojekt"
+          }
+        ]
+      },
+      "creative": {
+        "eyebrow": "Creative Frontend",
+        "title": "Motion och 3D med mening",
+        "body": "Jag vill att interaktioner ska ge energi och personlighet, men alltid stötta innehållet i stället för att distrahera från det.",
+        "status": "Under utveckling"
+      },
+      "about": {
+        "eyebrow": "Vad jag tar med till ett team",
+        "title": "Jag vill bygga digitala upplevelser som känns genomarbetade, inte generiska.",
+        "body": "För mig handlar bra frontend inte bara om att få saker att fungera. Det handlar om att skapa tydlighet, förtroende och en känsla av att varje detalj är där av en anledning.",
+        "strengths": [
+          {
+            "title": "Frontend med riktning",
+            "description": "Jag bygger gränssnitt som känns tydliga, moderna och genomtänkta hela vägen från struktur till detaljer.",
+            "icon": "Code2"
+          },
+          {
+            "title": "UX som märks i flödet",
+            "description": "Navigation, hierarki och innehåll ska hjälpa användaren framåt, inte bara se snygga ut i en mockup.",
+            "icon": "Palette"
+          },
+          {
+            "title": "Kreativitet med funktion",
+            "description": "Animationer, färg och 3D får gärna sticka ut, men de ska alltid förstärka upplevelsen och berättelsen.",
+            "icon": "Sparkles"
+          }
+        ]
+      },
+      "projects": {
+        "eyebrow": "Utvalda projekt",
+        "title": "Projekt som visar hur jag kombinerar innehåll, UX och frontend.",
+        "body": "Här lyfter jag fram arbeten som visar både visuell känsla och hur jag strukturerar upplevelser för riktiga användarbehov."
+      },
+      "process": {
+        "eyebrow": "Så jobbar jag",
+        "title": "Från idé till färdig upplevelse med fokus på tydlighet.",
+        "stepPrefix": "Steg",
+        "steps": [
+          {
+            "step": "01",
+            "title": "Förstå behovet",
+            "description": "Jag börjar med flöden, innehåll och vad användaren faktiskt behöver kunna göra utan friktion."
+          },
+          {
+            "step": "02",
+            "title": "Forma en tydlig riktning",
+            "description": "Typografi, hierarki och komponenter behöver kännas konsekventa så att sidan får en stark identitet."
+          },
+          {
+            "step": "03",
+            "title": "Bygga för vidareutveckling",
+            "description": "Jag tänker i återanvändbara delar, läsbar kod och animationer som går att utveckla vidare över tid."
+          }
+        ]
+      },
+      "contact": {
+        "eyebrow": "Nästa steg",
+        "title": "Jag vill att portfoliot ska visa både personlighet och process.",
+        "body": "Fas 2 ger projekten egna sidor så att du snabbt kan se både sammanfattning och djup. Härifrån kan sidan växa vidare med riktiga länkar, fler resultat och skarpare bevis på hur jag arbetar.",
+        "priorityTitle": "Prioriterat härnäst",
+        "priorities": [
+          "Fylla varje case study med fler riktiga resultat, processbilder och beslut.",
+          "Lägga till riktiga länkar till GitHub, LinkedIn, e-post och liveprojekt.",
+          "Verifiera hela projektet med TypeScript och fortsätta förbättra SEO."
+        ]
+      },
+      "footer": {
+        "text": "Felicia Bengtsson. Portfolio byggd i Next.js, TypeScript och Framer Motion."
+      }
+    },
+    "projectsPage": {
+      "eyebrow": "Alla case studies",
+      "title": "Projekt som visar hur jag jobbar med struktur, känsla och frontend.",
+      "body": "Här finns en samlad översikt över projekt som jag använder för att visa min process, mina prioriteringar och hur jag omsätter idéer till användbara upplevelser."
+    },
+    "projectDetail": {
+      "overviewLabels": {
+        "role": "Roll",
+        "timeframe": "Tidsram",
+        "team": "Team"
+      },
+      "fallbackNote": "Det här projektet fortsätter att utvecklas med fler insikter och detaljer.",
+      "inProject": "I projektet",
+      "deliverables": "Leveranser",
+      "nextSteps": "Fortsatt utveckling",
+      "links": "Länkar",
+      "nextPortfolioEyebrow": "Vidare i portfoliot",
+      "nextCaseStudyPrefix": "Nästa case study:",
+      "moreProjectsTitle": "Se fler projekt",
+      "nextPortfolioBody": "Portfoliot blir starkare ju tydligare varje projekt visar tankeprocess, prioriteringar och resultat. Därför fortsätter jag bygga ut varje case study steg för steg."
+    }
+  },
+  "projects": [
+    {
+      "slug": "grontkortgo",
+      "title": "GrontKortGo.se",
+      "eyebrow": "Webbapp för barns golfteori",
+      "role": "Frontend, spelkänsla och responsiv upplevelse",
+      "timeframe": "2026",
+      "sortDate": "2026-04-18",
+      "team": "Kundprojekt",
+      "status": "Lanserat",
+      "description": "En webbaserad golfvärld där barn kan träna golfregler, säkerhet och golfvett genom en mer lekfull digital upplevelse.",
+      "tags": ["React", "UX/UI", "Gamification"],
+      "highlights": [
+        "Barnanpassad teori med tydlig spelkänsla",
+        "Interaktioner som gör lärandet mer aktivt",
+        "Responsiv upplevelse för flera skärmstorlekar"
+      ],
+      "ctaNote": "Publikt projekt med fokus på lekfull inlärning och tydliga flöden.",
+      "facts": [
+        {
+          "label": "Fokus",
+          "value": "Barn, teori, trygghet och spelifierad navigation"
+        },
+        {
+          "label": "Mål",
+          "value": "Göra golfteori roligare och mer tillgänglig"
+        },
+        { "label": "Roll", "value": "Frontend och användarupplevelse" }
+      ],
+      "metrics": [
+        { "label": "Målgrupp", "value": "Barn upp till 12 år" },
+        { "label": "Format", "value": "Webbaserad golfvärld" },
+        { "label": "Riktning", "value": "Lekfull, tydlig och pedagogisk" }
+      ],
+      "sections": [
+        {
+          "title": "Bakgrund och behov",
+          "paragraphs": [
+            "GrontKortGo.se är byggt för att göra golfteori mer begriplig och rolig för yngre barn. I stället för att bara presentera fakta behövde upplevelsen kännas aktiv, trygg och enkel att komma in i.",
+            "Projektet krävde en balans mellan lekfullhet och tydlighet, eftersom användaren ska kunna utforska fritt men ändå förstå vad varje steg betyder."
+          ]
+        },
+        {
+          "title": "Min riktning",
+          "paragraphs": [
+            "Jag arbetade med frontend och detaljer i upplevelsen som stärker känslan av en digital värld. Fokus låg på att låta interaktioner, flöden och responsiva ytor hjälpa barnen fram utan att gränssnittet blev tungt.",
+            "Den visuella riktningen behövde kännas pigg och tillgänglig, samtidigt som information om regler och golfvett skulle vara lätt att ta till sig."
+          ]
+        },
+        {
+          "title": "Resultat och fortsatt utveckling",
+          "paragraphs": [
+            "Projektet visar hur frontend kan göra ett lärande flöde mer engagerande genom struktur, rörelse och tydliga visuella signaler.",
+            "Ett naturligt nästa steg är att fortsätta förfina detaljer kring tillgänglighet, laddningstider och hur olika barn navigerar genom teorimomenten."
+          ]
+        }
+      ],
+      "deliverables": [
+        "Responsiva vyer för en webbaserad lärupplevelse",
+        "Frontenddetaljer som stärker spelkänslan",
+        "Tydliga flöden för teori, regler och säkerhet",
+        "Grund för fortsatt iteration efter lansering"
+      ],
+      "nextSteps": [
+        "Följa upp beteenden i de viktigaste flödena",
+        "Fortsätta putsa mikrointeraktioner och tillgänglighet",
+        "Bygga vidare på innehåll och guidning över tid"
+      ],
+      "links": [
+        {
+          "label": "Besök GrontKortGo.se",
+          "href": "https://grontkortgo.se/",
+          "external": true
+        }
+      ]
+    },
+    {
+      "slug": "matmusikminnen",
+      "title": "matmusikminnen.nu",
+      "eyebrow": "Tillgänglig webbapp",
+      "role": "Frontend och tillgänglig användarupplevelse",
+      "timeframe": "2025-2026",
+      "sortDate": "2026-02-01",
+      "team": "Kundprojekt",
+      "status": "Pågående",
+      "description": "En vidareutvecklad digital upplevelse för Mat-Musik-Minnen, med fokus på reminiscens, tydligare layout och användning på fler enheter.",
+      "tags": ["Next.js", "Tillgänglighet", "UX"],
+      "highlights": [
+        "Tydligare struktur för ett omsorgsnära verktyg",
+        "Anpassning för mobil, surfplatta och webb",
+        "Fokus på läsbarhet, lugn och tillgänglighet"
+      ],
+      "ctaNote": "Pågående projekt där innehåll, teknik och tillgänglighet växer fram tillsammans.",
+      "facts": [
+        {
+          "label": "Fokus",
+          "value": "Reminiscens, samtal och digital tillgänglighet"
+        },
+        {
+          "label": "Mål",
+          "value": "Göra verktyget lättare att använda i vardagen"
+        },
+        { "label": "Roll", "value": "Frontend och UX-nära implementation" }
+      ],
+      "metrics": [
+        { "label": "Plattform", "value": "Mobil, surfplatta och webb" },
+        { "label": "Ton", "value": "Lugn, varm och tydlig" },
+        { "label": "Prioritet", "value": "Tillgänglighet och struktur" }
+      ],
+      "sections": [
+        {
+          "title": "Bakgrund och behov",
+          "paragraphs": [
+            "Mat-Musik-Minnen är ett digitalt verktyg som ska stödja samtal, minnen och sinnesintryck i omsorgsnära sammanhang. Det ställer andra krav på tempo, tydlighet och tillgänglighet än en vanlig marknadswebb.",
+            "I vidareutvecklingen behövde upplevelsen fungera bättre på fler enheter och vara enklare att ta in för användare med olika förutsättningar."
+          ]
+        },
+        {
+          "title": "Min riktning",
+          "paragraphs": [
+            "Jag fokuserade på att skapa en mer stabil frontendstruktur där innehåll, teman och interaktioner kan växa utan att helheten tappar lugn.",
+            "Designbesluten handlar mycket om läsbarhet, tydlig rytm och att minska friktion i situationer där verktyget används tillsammans med andra människor."
+          ]
+        },
+        {
+          "title": "Resultat och fortsatt utveckling",
+          "paragraphs": [
+            "Projektet visar hur omsorg om detaljer i frontend kan göra en digital produkt mer användbar i ett känsligt och praktiskt sammanhang.",
+            "Nästa steg är fortsatt arbete med innehåll, tillgänglighet, testning och förfining av viktiga flöden när produkten når fler användare."
+          ]
+        }
+      ],
+      "deliverables": [
+        "Responsiv struktur för flera enheter",
+        "Komponenter för tydligare innehållspresentation",
+        "UX-förbättringar med fokus på lugn och läsbarhet",
+        "Teknisk grund för fortsatt vidareutveckling"
+      ],
+      "nextSteps": [
+        "Fortsätta verifiera tillgänglighet i centrala vyer",
+        "Stärka innehållsstrukturen för fler teman",
+        "Optimera prestanda och upplevelse på mobila enheter"
+      ],
+      "links": [
+        {
+          "label": "Besök matmusikminnen.nu",
+          "href": "https://matmusikminnen.nu/",
+          "external": true
+        }
+      ]
+    },
+    {
+      "slug": "lillaon",
+      "title": "lillaon.se",
+      "eyebrow": "Webbplats med personlig platskänsla",
+      "role": "Frontend, layout och visuell presentation",
+      "timeframe": "2025",
+      "sortDate": "2025-09-01",
+      "team": "Kundprojekt",
+      "status": "Lanserat",
+      "description": "En varm och bilddriven webbplats för Lilla On, där första intrycket ska bjuda in besökaren och ge platsen en tydlig digital närvaro.",
+      "tags": ["Frontend", "Responsiv design", "Visuell identitet"],
+      "highlights": [
+        "Bilddriven introduktion med personlig ton",
+        "Enkel struktur som gör platsen lätt att upptäcka",
+        "Responsiv layout för en mjukare mobilupplevelse"
+      ],
+      "ctaNote": "Publikt projekt med fokus på känsla, enkelhet och tydlig presentation.",
+      "facts": [
+        {
+          "label": "Fokus",
+          "value": "Platskänsla, bilder och enkel navigation"
+        },
+        { "label": "Mål", "value": "Göra Lilla On mer inbjudande digitalt" },
+        { "label": "Roll", "value": "Frontend och visuell struktur" }
+      ],
+      "metrics": [
+        { "label": "Format", "value": "Publik webbplats" },
+        { "label": "Ton", "value": "Välkomnande och personlig" },
+        { "label": "Styrka", "value": "Bild och innehåll i fokus" }
+      ],
+      "sections": [
+        {
+          "title": "Bakgrund och behov",
+          "paragraphs": [
+            "Lilla On behövde en webbplats som snabbt kunde förmedla platsens känsla och samtidigt göra det enkelt för besökaren att orientera sig.",
+            "Utmaningen var att låta bilder och kortare text skapa närvaro utan att sidan blev plottrig eller för tung."
+          ]
+        },
+        {
+          "title": "Min riktning",
+          "paragraphs": [
+            "Jag arbetade med en lugnare struktur där innehåll och bildytor får bära helheten. Det gör att webbplatsen kan kännas personlig utan att användaren tappar riktning.",
+            "Responsiviteten var viktig, eftersom mycket av första kontakten med platsen sannolikt sker från mobil."
+          ]
+        },
+        {
+          "title": "Resultat och fortsatt utveckling",
+          "paragraphs": [
+            "Resultatet är en enkel, tydlig och inbjudande webbplats som ger Lilla On en mer samlad digital närvaro.",
+            "Vidare arbete kan handla om mer innehåll, bättre bildoptimering och tydligare vägar för besökare som vill ta nästa steg."
+          ]
+        }
+      ],
+      "deliverables": [
+        "Startsida med tydlig välkomnande riktning",
+        "Responsiva bild- och innehållssektioner",
+        "Layout som lyfter platsens personlighet",
+        "Grund för mer innehåll och vidare optimering"
+      ],
+      "nextSteps": [
+        "Komplettera med fler konkreta besökarflöden",
+        "Optimera bildstorlekar och laddning",
+        "Bygga ut innehåll när mer material finns"
+      ],
+      "links": [
+        {
+          "label": "Besök lillaon.se",
+          "href": "https://lillaon.se/",
+          "external": true
+        }
+      ]
+    },
+    {
+      "slug": "how",
+      "title": "HOW",
+      "eyebrow": "UX/UI-koncept",
+      "role": "UX/UI-koncept och informationsarkitektur",
+      "timeframe": "Konceptarbete",
+      "sortDate": "2024-11-06",
+      "team": "Individuellt projekt",
+      "status": "Koncept",
+      "description": "Ett koncept för en lugnare lärplattform där ämnen, schema och vardagens viktigaste uppgifter blir lättare att hitta.",
+      "tags": ["UX/UI", "Figma", "Designsystem"],
+      "highlights": [
+        "Tydligare ämnesöversikt för elever",
+        "Lugn färgpalett och bättre visuell hierarki",
+        "Fokus på begriplighet i vardagliga flöden"
+      ],
+      "image": "/assets/images/Howl-ux.png",
+      "imageAlt": "HOW-plattform med ämneskort och sidomeny",
+      "ctaNote": "Case study byggs ut vidare med klickbar prototyp.",
+      "facts": [
+        {
+          "label": "Fokus",
+          "value": "Informationsarkitektur och tydliga flöden"
+        },
+        {
+          "label": "Primär användare",
+          "value": "Elever som snabbt behöver hitta rätt vy"
+        },
+        {
+          "label": "Roll",
+          "value": "Research, UX-struktur och visuell riktning"
+        }
+      ],
+      "metrics": [
+        { "label": "Kärnflöden", "value": "3 centrala ytor" },
+        { "label": "Ton", "value": "Lugn, tydlig och vardagsnära" },
+        { "label": "Leverans", "value": "Dashboard-koncept med ämneskort" }
+      ],
+      "sections": [
+        {
+          "title": "Bakgrund och utmaning",
+          "paragraphs": [
+            "Många skolrelaterade gränssnitt blir snabbt tunga att orientera i. För en elev handlar vardagen ofta om att snabbt kunna hitta schema, ämnen och nästa aktivitet utan att behöva tolka ett komplext system.",
+            "Utmaningen i HOW var att skapa en upplevelse som kändes mer fokuserad och mindre överbelastad, samtidigt som innehållet fortfarande kunde rymma flera olika funktioner."
+          ]
+        },
+        {
+          "title": "Min riktning",
+          "paragraphs": [
+            "Jag arbetade med en layout där sidomenyn ger stabil navigation och huvudytan lyfter fram ämneskort med tydlig igenkänning. Till höger finns stödytor för tid och dagens aktiviteter, så att användaren direkt ser vad som är viktigast just nu.",
+            "Visuellt valde jag en mjukare palett och tydlig kortstruktur för att minska stresskänslan och ge varje del en klar plats i hierarkin."
+          ]
+        },
+        {
+          "title": "Resultat och fortsatt utveckling",
+          "paragraphs": [
+            "Projektet visar hur jag tänker när innehållsstruktur och visuell design måste jobba tillsammans. Det är ett bra exempel på hur UX-beslut kan skapa lugn utan att upplevelsen blir anonym.",
+            "Nästa steg är att bygga en klickbar prototyp och validera flöden med riktiga användare för att se vilka genvägar och vyer som skapar mest nytta i vardagen."
+          ]
+        }
+      ],
+      "deliverables": [
+        "Startvy med tydlig prioritering av dagens viktigaste information",
+        "Ämnesöversikt med konsekvent kortstruktur",
+        "Visuell riktning med lugnare färgspråk",
+        "Grund för vidare komponent- och flödesarbete"
+      ],
+      "nextSteps": [
+        "Bygga klickbar prototyp för fler scenarier",
+        "Testa navigationen med elever eller lärare",
+        "Fortsätta definiera designsystem och tillstånd"
+      ]
+    },
+    {
+      "slug": "lalles-vanner",
+      "title": "Lalles Vänner",
+      "eyebrow": "Frontendprojekt",
+      "role": "Frontend, innehållsstruktur och visuell känsla",
+      "timeframe": "Kundnära projekt",
+      "sortDate": "2024-10-01",
+      "team": "Individuellt arbete",
+      "status": "Kundprojekt",
+      "description": "En webbplats för ett jazzband där spelningar, galleri och kontakt behövde kännas både personliga och enkla att hitta.",
+      "tags": ["HTML", "CSS", "Responsiv design"],
+      "highlights": [
+        "Mer karaktär i uttrycket än en standardmall",
+        "Tydligare vägar till kontakt och bokning",
+        "Anpassad layout för att lyfta bandets identitet"
+      ],
+      "image": "/assets/images/lalles-vanner.png",
+      "imageAlt": "Startsida för Lalles Vänner med stark scenbild och orange informationskort",
+      "ctaNote": "Bra grund för att utveckla vidare med mer innehåll och modernare struktur.",
+      "facts": [
+        {
+          "label": "Fokus",
+          "value": "Landningssida, kontaktväg och personlig ton"
+        },
+        {
+          "label": "Mål",
+          "value": "Lyfta bandets identitet och göra information enkel att hitta"
+        },
+        { "label": "Roll", "value": "Frontend och visuell struktur" }
+      ],
+      "metrics": [
+        { "label": "Huvudmål", "value": "Spelningar, galleri och kontakt" },
+        { "label": "Visuell riktning", "value": "Scennära, varm och tydlig" },
+        {
+          "label": "Styrka",
+          "value": "Personlighet framför generisk mallkänsla"
+        }
+      ],
+      "sections": [
+        {
+          "title": "Bakgrund och behov",
+          "paragraphs": [
+            "För en musikgrupp är det viktigt att webbplatsen snabbt skapar känsla. Besökaren ska få en tydlig uppfattning om vilka de är, vilken typ av musik de spelar och hur man kommer i kontakt med dem.",
+            "I det här projektet handlade mycket om att ge bandet en egen ton snarare än att bara presentera information i ett neutralt skal."
+          ]
+        },
+        {
+          "title": "Hur jag arbetade",
+          "paragraphs": [
+            "Jag prioriterade en stor hero-bild och ett framträdande textblock som direkt sätter scenen. Färgval och layout får ta plats för att matcha bandets uttryck, samtidigt som information om spelningar och kontakt fortfarande ligger nära till hands.",
+            "Strukturen fokuserar på att snabbt leda vidare till det som är viktigast för besökaren: att förstå erbjudandet, se vilka bandet är och ta kontakt."
+          ]
+        },
+        {
+          "title": "Lärdomar och nästa steg",
+          "paragraphs": [
+            "Projektet blev ett bra exempel på hur frontend kan hjälpa ett varumärke att kännas mer levande. Jag fick också tydligare erfarenhet av hur mycket tonalitet och bildval påverkar helhetsintrycket.",
+            "Om jag utvecklar projektet vidare vill jag förbättra informationsstrukturen för spelningar, skapa en tydligare mobilupplevelse och ge kunden ett enklare sätt att uppdatera innehållet över tid."
+          ]
+        }
+      ],
+      "deliverables": [
+        "Startsida med stark visuell introduktion",
+        "Sektioner för om oss, bandmedlemmar och kontakt",
+        "Layout som stöder den personliga tonen",
+        "Responsiv grund som kan byggas vidare på"
+      ],
+      "nextSteps": [
+        "Skapa tydligare struktur för kommande spelningar",
+        "Bygga en enklare innehållshantering eller CMS-lösning",
+        "Förfina mobilupplevelsen och tillgängligheten"
+      ]
+    },
+    {
+      "slug": "portfolio-v2",
+      "title": "Portfolio V2",
+      "eyebrow": "Produktarbete på egen sida",
+      "role": "Next.js, motion och innehållsstrategi",
+      "timeframe": "Pågående ombyggnad",
+      "sortDate": "2026-01-15",
+      "team": "Eget produktarbete",
+      "status": "Pågående",
+      "description": "Min egen portfolio byggs om för att visa mer än bara design. Fokus ligger på att tydliggöra hur jag tänker, bygger och förbättrar digitala upplevelser.",
+      "tags": ["Next.js", "TypeScript", "Framer Motion"],
+      "highlights": [
+        "Tydligare hero med personlig positionering",
+        "Projektsektion byggd för riktiga case studies",
+        "Grund lagd för bättre SEO och mer trovärdig storytelling"
+      ],
+      "ctaNote": "Levande case study som fortsätter utvecklas parallellt med sajten.",
+      "facts": [
+        {
+          "label": "Varför",
+          "value": "Visa process, prioritering och kvalitet tydligare"
+        },
+        {
+          "label": "Fokus",
+          "value": "Innehåll, struktur och trovärdig presentation"
+        },
+        { "label": "Roll", "value": "Produktägare, designer och utvecklare" }
+      ],
+      "metrics": [
+        { "label": "Fas 1", "value": "Ny startsida och designgrund" },
+        { "label": "Fas 2", "value": "Dynamiska case studies" },
+        {
+          "label": "Nästa fokus",
+          "value": "Riktiga länkar, SEO och verifiering"
+        }
+      ],
+      "sections": [
+        {
+          "title": "Varför jag bygger om portfoliot",
+          "paragraphs": [
+            "Den tidigare versionen hade visuell ambition men saknade den tydlighet som gör ett portfolio övertygande. Det fanns för mycket template-känsla och för lite som förklarade vem jag är och hur jag arbetar.",
+            "Målet med ombyggnaden är att skapa en sida som känns mer professionell, mer personlig och mer användbar för någon som snabbt vill bedöma min kompetens."
+          ]
+        },
+        {
+          "title": "Vad som är på plats nu",
+          "paragraphs": [
+            "Jag har satt en ny struktur för startsidan, byggt starkare projektkort och skapat en mer sammanhållen visuell grund med tydligare typografi, innehållshierarki och design-tokens.",
+            "I den här fasen är varje projekt på väg att bli en riktig case study i stället för en kort sammanfattning. Det gör sajten mer skalbar och mer relevant för framtida arbetsprov."
+          ]
+        },
+        {
+          "title": "Vad jag vill utveckla vidare",
+          "paragraphs": [
+            "Nästa steg är att fylla på med riktiga externa länkar, skarpa SEO-detaljer och fler bevis på hur jag arbetar i praktiken. Jag vill också kunna visa hur designbeslut, kod och iteration hänger ihop.",
+            "Det här projektet är viktigt för mig eftersom det speglar hur jag vill jobba: med tydlig riktning, egen tonalitet och en bra balans mellan estetik och funktion."
+          ]
+        }
+      ],
+      "deliverables": [
+        "Ny hero med tydligare positionering",
+        "Projektdata som återanvänds mellan översikt och detaljsidor",
+        "Case study-struktur för fortsatt innehållsarbete",
+        "Mer sammanhållen metadata och visuell grund"
+      ],
+      "nextSteps": [
+        "Lägga till riktiga GitHub- och LinkedIn-länkar",
+        "Bygga fler projektsidor och komplettera befintliga case studies",
+        "Få hela projektet att gå rent i TypeScript och build"
+      ]
+    }
+  ]
+}

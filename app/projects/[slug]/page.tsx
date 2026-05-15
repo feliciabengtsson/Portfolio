@@ -9,7 +9,8 @@ import {
   getNextProject,
   getProjectBySlug,
   getProjectSlugs,
-} from "@/lib/projects";
+  siteContent,
+} from "@/lib/content";
 
 type ProjectPageProps = {
   params: Promise<{
@@ -29,12 +30,12 @@ export async function generateMetadata({
 
   if (!project) {
     return {
-      title: "Projekt hittades inte | Felicia Bengtsson",
+      title: siteContent.metadata.notFoundProjectTitle,
     };
   }
 
   return {
-    title: `${project.title} | Felicia Bengtsson`,
+    title: `${project.title} | ${siteContent.name}`,
     description: project.description,
   };
 }
@@ -47,11 +48,12 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
     notFound();
   }
 
+  const { buttons, name, navigation, projectDetail } = siteContent;
   const nextProject = getNextProject(project.slug);
   const overviewFacts = [
-    { label: "Roll", value: project.role },
-    { label: "Tidsram", value: project.timeframe },
-    { label: "Team", value: project.team },
+    { label: projectDetail.overviewLabels.role, value: project.role },
+    { label: projectDetail.overviewLabels.timeframe, value: project.timeframe },
+    { label: projectDetail.overviewLabels.team, value: project.team },
   ];
 
   return (
@@ -62,7 +64,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
             href="/"
             className="text-sm font-semibold uppercase tracking-[0.22em] text-primary"
           >
-            Felicia Bengtsson
+            {name}
           </Link>
 
           <div className="flex flex-wrap items-center gap-3">
@@ -74,7 +76,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
             >
               <Link href="/projects">
                 <ArrowLeft className="h-4 w-4" />
-                Alla projekt
+                {navigation.allProjects}
               </Link>
             </Button>
           </div>
@@ -88,7 +90,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
             className="inline-flex items-center gap-2 text-sm font-semibold text-primary transition-colors hover:text-primary/80"
           >
             <ArrowLeft className="h-4 w-4" />
-            Tillbaka till case studies
+            {navigation.backToCaseStudies}
           </Link>
 
           <div className="mt-8 grid gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-start lg:gap-10">
@@ -161,8 +163,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
               <CardContent className="p-5 sm:p-6">
                 <p className="text-sm leading-relaxed text-muted-foreground">
-                  {project.ctaNote ??
-                    "Det hÃ¤r projektet fortsÃ¤tter att utvecklas med fler insikter och detaljer."}
+                  {project.ctaNote ?? projectDetail.fallbackNote}
                 </p>
               </CardContent>
             </Card>
@@ -215,7 +216,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
               <Card className="border-white/60 bg-white/80 shadow-(--soft-shadow) backdrop-blur-sm">
                 <CardContent className="p-5 sm:p-6">
                   <p className="text-xs font-semibold uppercase tracking-[0.24em] text-primary/80">
-                    I projektet
+                    {projectDetail.inProject}
                   </p>
                   <div className="mt-4 space-y-3">
                     {project.facts.map((fact) => (
@@ -238,7 +239,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
               <Card className="border-white/60 bg-white/80 shadow-(--soft-shadow) backdrop-blur-sm">
                 <CardContent className="p-5 sm:p-6">
                   <p className="text-xs font-semibold uppercase tracking-[0.24em] text-primary/80">
-                    Leveranser
+                    {projectDetail.deliverables}
                   </p>
                   <div className="mt-4 space-y-3 text-sm leading-relaxed text-muted-foreground">
                     {project.deliverables.map((item) => (
@@ -251,7 +252,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
               <Card className="border-white/60 bg-white/80 shadow-(--soft-shadow) backdrop-blur-sm">
                 <CardContent className="p-5 sm:p-6">
                   <p className="text-xs font-semibold uppercase tracking-[0.24em] text-primary/80">
-                    Fortsatt utveckling
+                    {projectDetail.nextSteps}
                   </p>
                   <div className="mt-4 space-y-3 text-sm leading-relaxed text-muted-foreground">
                     {project.nextSteps.map((item) => (
@@ -265,7 +266,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                 <Card className="border-white/60 bg-white/80 shadow-(--soft-shadow) backdrop-blur-sm">
                   <CardContent className="p-5 sm:p-6">
                     <p className="text-xs font-semibold uppercase tracking-[0.24em] text-primary/80">
-                      LÃ¤nkar
+                      {projectDetail.links}
                     </p>
                     <div className="mt-4 flex flex-wrap gap-3">
                       {project.links.map((link) =>
@@ -304,17 +305,15 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
             <CardContent className="flex flex-col gap-6 p-5 sm:p-8 lg:flex-row lg:items-end lg:justify-between">
               <div className="max-w-2xl">
                 <p className="text-sm font-semibold uppercase tracking-[0.24em] text-primary/80">
-                  Vidare i portfoliot
+                  {projectDetail.nextPortfolioEyebrow}
                 </p>
                 <h2 className="mt-3 text-2xl font-bold text-foreground sm:text-3xl lg:text-4xl">
                   {nextProject
-                    ? `NÃ¤sta case study: ${nextProject.title}`
-                    : "Se fler projekt"}
+                    ? `${projectDetail.nextCaseStudyPrefix} ${nextProject.title}`
+                    : projectDetail.moreProjectsTitle}
                 </h2>
                 <p className="mt-4 text-base leading-relaxed text-muted-foreground">
-                  Portfoliot blir starkare ju tydligare varje projekt visar
-                  tankeprocess, prioriteringar och resultat. DÃ¤rfÃ¶r fortsÃ¤tter
-                  jag bygga ut varje case study steg fÃ¶r steg.
+                  {projectDetail.nextPortfolioBody}
                 </p>
               </div>
 
@@ -326,7 +325,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                     className="w-full justify-center shadow-(--glow-shadow) sm:w-auto"
                   >
                     <Link href={`/projects/${nextProject.slug}`}>
-                      NÃ¤sta projekt
+                      {buttons.nextProject}
                       <ArrowRight className="h-5 w-5" />
                     </Link>
                   </Button>
@@ -339,7 +338,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                   className="w-full justify-center border-primary/20 bg-white/70 text-foreground shadow-(--soft-shadow) sm:w-auto"
                 >
                   <Link href="/projects">
-                    Alla case studies
+                    {buttons.allCaseStudies}
                     <ArrowRight className="h-5 w-5" />
                   </Link>
                 </Button>

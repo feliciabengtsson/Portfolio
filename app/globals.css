@@ -40,10 +40,25 @@ body {
   overflow-x: hidden;
   color: hsl(var(--foreground));
   background:
-    radial-gradient(circle at top left, rgba(255, 244, 232, 0.95), transparent 36%),
-    radial-gradient(circle at top right, rgba(106, 150, 170, 0.18), transparent 28%),
+    radial-gradient(
+      circle at top left,
+      rgba(255, 244, 232, 0.95),
+      transparent 36%
+    ),
+    radial-gradient(
+      circle at top right,
+      rgba(106, 150, 170, 0.18),
+      transparent 28%
+    ),
     linear-gradient(180deg, #fff8f1 0%, #f8ecdf 48%, #f4e5d6 100%);
   font-family: var(--font-body), Arial, Helvetica, sans-serif;
+}
+
+@layer utilities {
+  .container {
+    width: 100%;
+    max-width: none;
+  }
 }
 
 h1,
